@@ -1,0 +1,9 @@
+/* styles.css */
+
+body {
+    background-image: url('../images/goku.svg'), url('../images/naruto.svg'), url('../images/saitama.svg'), url('../images/luffy.svg');
+    background-position: top left, top right, bottom left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%; /* Adjust size according to mobile dimensions */
+  }
+  

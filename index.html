@@ -2,39 +2,49 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Animania, the ultimate anime quiz game!">
   <title>Welcome to Animania!</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="assets\css\style.css">
 </head>
 <body>
   <header id="main-header">
     <h1>Animania: Unleash the Otaku Within</h1>
   </header>
 
-  <main id="entry-section">
-    <!-- Section for a brief anime-related quote or tagline -->
-    <div id="anime-quote">
-      <p>"To be the very best, like no one ever was!"</p>
-    </div>
+  <main id="main-content">
+    <section id="intro-section">
+      <!-- Section for a brief anime-related quote or tagline -->
+      <article id="anime-quote">
+        <p>"To be the very best, like no one ever was!"</p>
+      </article>
+    </section>
 
-    <!-- Buttons for quiz initiation and game instructions -->
-    <button id="initiate-quiz">Dive In!</button>
-    <button id="game-rules">How to Play</button>
+    <section id="action-section">
+      <!-- Buttons for quiz initiation and game instructions -->
+      <button id="start-button">Dive In!</button>
+      <button id="instruction-button">How to Play</button>
+    </section>
 
-    <!-- Optional: Section for showcasing some anime characters or themes -->
-    <div id="anime-showcase">
-      <img src="assets/character1.jpg" alt="Anime Character 1">
-      <img src="assets/character2.jpg" alt="Anime Character 2">
-    </div>
+    <section id="showcase-section">
+      <!-- Optional: Section for showcasing some anime characters or themes -->
+      <div class="character">
+        <img src="assets/character1.jpg" alt="Anime Character 1">
+      </div>
+      <div class="character">
+        <img src="assets/character2.jpg" alt="Anime Character 2">
+      </div>
+    </section>
   </main>
 
-  <footer id="credit-section">
+  <footer id="footer-section">
     <p>Made with ❤️ by an Anime Fan</p>
   </footer>
 
   <!-- Popup for 'How to Play' -->
-  <div id="instruction-popup" class="hidden">
+  <div id="instruction-popup" class="hidden" role="dialog" aria-labelledby="popup-title">
     <span id="close-popup">×</span>
-    <h2>How to Play Animania</h2>
+    <h2 id="popup-title">How to Play Animania</h2>
     <p>Your guide to mastering this quiz.</p>
   </div>
 
