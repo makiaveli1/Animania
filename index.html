@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>Animania - Landing Page</title>
+  <title>Welcome to Animania!</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <!-- Game title -->
-    ANIMANIA
+  <header id="main-header">
+    <h1>Animania: Unleash the Otaku Within</h1>
   </header>
-  <main>
-    <!-- 'Start Quiz' button -->
-    <!-- 'How to Play' button -->
+
+  <main id="entry-section">
+    <!-- Section for a brief anime-related quote or tagline -->
+    <div id="anime-quote">
+      <p>"To be the very best, like no one ever was!"</p>
+    </div>
+
+    <!-- Buttons for quiz initiation and game instructions -->
+    <button id="initiate-quiz">Dive In!</button>
+    <button id="game-rules">How to Play</button>
+
+    <!-- Optional: Section for showcasing some anime characters or themes -->
+    <div id="anime-showcase">
+      <img src="assets/character1.jpg" alt="Anime Character 1">
+      <img src="assets/character2.jpg" alt="Anime Character 2">
+    </div>
   </main>
-  <footer>
-    <!-- Footer content -->
+
+  <footer id="credit-section">
+    <p>Made with ❤️ by an Anime Fan</p>
   </footer>
+
+  <!-- Popup for 'How to Play' -->
+  <div id="instruction-popup" class="hidden">
+    <span id="close-popup">×</span>
+    <h2>How to Play Animania</h2>
+    <p>Your guide to mastering this quiz.</p>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
