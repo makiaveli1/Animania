@@ -2,8 +2,28 @@
 
 body {
     background-image: url('../images/goku.svg'), url('../images/naruto.svg'), url('../images/saitama.svg'), url('../images/luffy.svg');
-    background-position: top left, top right, bottom left, bottom right;
+    background-position: 0% 0%, 100% 100%, 100% 100%, 100% 100%; /* top left, top right, bottom left, bottom right */
     background-repeat: no-repeat;
-    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%; /* Adjust size according to mobile dimensions */
+    background-size: 212px 415px, 212px 415px, 212px 415px, 212px 415px; /* Adjust size based on your screen size */
   }
+  
+  #button-wrapper {
+    background-color: #ffffff; /* Background color for the button wrapper */
+    padding: 1rem;
+    display: flex; /* Using Flexbox */
+    flex-direction: column; /* Stacking elements on top of each other */
+    align-items: center; /* Centering items horizontally */
+    justify-content: center; /* Centering items vertically */
+  }
+  
+  #initiate-quiz, #game-rules {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  
+  
   
