@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
 
+/* Asterisk wildcard selector */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 body {
     font-family: 'Just Me Again Down Here', cursive;
     background-color: #C4C4C4; /* Main background color */
@@ -9,10 +17,23 @@ body {
   #main-header {
     display: flex;
     justify-content: center;
-    background-size: 100%;
-    padding: 0;	
-    font-size: 1rem;
+    align-items: center; /* vertically aligns the text and the SVG */
+    background-color: #FEC833;
+    border-bottom: 0.2rem solid black;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    box-sizing: border-box;
   }
+  
+  #header-icon {
+    width: 30px;  /* Adjust size based on your preference */
+    height: auto;
+    margin-right: 0.5rem; /* Adds some space between the SVG and the text */
+  }
+  
+  
   
 
   .anime-bg {
