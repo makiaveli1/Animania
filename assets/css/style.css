@@ -27,13 +27,12 @@ body {
     box-sizing: border-box;
   }
   
+
   #header-icon {
     width: 30px;  /* Adjust size based on your preference */
     height: auto;
     margin-right: 0.5rem; /* Adds some space between the SVG and the text */
   }
-  
-  
   
 
   .anime-bg {
@@ -71,5 +70,20 @@ body {
     top: 50%;
   }
   
+
+  #intro-section {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    color: #fff; /* White text for better visibility */
+    text-align: center; /* Center text horizontally */
+    margin-top: 1rem; /* 1rem space from the header */
+    padding: 1rem; /* Internal spacing */
+    border-radius: 2px; /* Optional, for rounded corners */
+    width: auto;
+    box-sizing: border-box;
+  }
+  
+  #intro-section p {
+    font-size: 1.5rem;
+  }
   
   
