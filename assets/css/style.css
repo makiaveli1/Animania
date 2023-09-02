@@ -104,9 +104,11 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(to right, rgba(135, 79, 54, 0.81), rgba(179, 173, 166, 0.81), rgba(176, 138, 77, 0.56));
+  box-shadow: #000000 0px 0px 10px 0px;
   border: 0.2rem solid black;
   border-radius: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 5rem;
+  padding: 8rem;
 }
 
 /* Individual Button Styles */
@@ -114,7 +116,7 @@ body {
 #game-rules {
   font-family: "just me again down here", cursive;
   font-size: 1.5rem !important;
-  background-color: #fec833;
+  background-color: #e9e7e1;
   box-shadow: #000000 0px 0px 10px 0px;
   color: rgb(19, 18, 18);
   border: 0.3rem solid black;
@@ -131,22 +133,37 @@ body {
   text-overflow: ellipsis;
 }
 
-/* Action Section */
-#action-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: #000000 0px 0px 10px 0px;
-  margin-top: 5rem;
-  padding: 8rem;
-}
-
 /* Button Wrapper */
 #button-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+
+#button-wrapper button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a pseudo-element for hover effect */
+#button-wrapper button:before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FEC833;
+  opacity: 1;  /* Add this */
+  z-index: -1;
+}
+
+/* Hover effect for background */
+#button-wrapper button:hover:before {
+  opacity: 0.5;
+}
+
 
 #instruction-popup {
   display: none;
