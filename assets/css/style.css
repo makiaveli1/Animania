@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&display=swap");
 
 /* Asterisk wildcard selector */
 * {
@@ -7,111 +7,107 @@
   box-sizing: border-box;
 }
 
-
 body {
-    font-family: 'Just Me Again Down Here', cursive;
-    background-color: #C4C4C4;
-    width: 100%;
-    height: 100%;
-  }
-  
+  font-family: "Just Me Again Down Here", cursive;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 100%;
+}
 
-  #main-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FEC833;
-    border-bottom: 0.2rem solid black;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 2rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
+#main-header {
+  font-family: "Source Serif 4", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fec833;
+  border-bottom: 0.2rem solid black;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  #header-icon {
-    width: 30px;
-    height: auto;
-    margin-right: 0.5rem;
-  }
-  
+#header-icon {
+  width: 30px;
+  height: auto;
+  margin-right: 0.5rem;
+}
 
-  .anime-bg {
-    position: fixed;
-    width: 280px;
-    height: 480px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: -1;
-  }
-  
-  #goku-bg {
-    background-image: url('../images/goku.svg');
-    left: -10%;
-    top: 5%;
-  }
-  
-  #naruto-bg {
-    background-image: url('../images/naruto.svg');
-    right: -10%;
-    top: 5%;
-  }
-  
-  #saitama-bg {
-    background-image: url('../images/saitama.svg');
-    left: -10%;
-    bottom: 0;
-    top: 50%;
-  }
-  
-  #luffy-bg {
-    background-image: url('../images/luffy.svg');
-    right: -10%;
-    bottom: 0;
-    top: 50%;
-  }
-  
+.anime-bg {
+  position: fixed;
+  width: 280px;
+  height: 480px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
 
-  #intro-section {
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: #000000 0px 0px 10px 0px;
-    color: #fff;
-    text-align: center;
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 2px;
-    width: auto;
-    box-sizing: border-box;
-    animation: 
-    fadeInZoom 2s ease 0s 1 normal forwards,
+#goku-bg {
+  background-image: url("../images/goku.svg");
+  left: -10%;
+  top: 5%;
+}
+
+#naruto-bg {
+  background-image: url("../images/naruto.svg");
+  right: -10%;
+  top: 5%;
+}
+
+#saitama-bg {
+  background-image: url("../images/saitama.svg");
+  left: -10%;
+  bottom: 0;
+  top: 50%;
+}
+
+#luffy-bg {
+  background-image: url("../images/luffy.svg");
+  right: -10%;
+  bottom: 0;
+  top: 50%;
+}
+
+#intro-section {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: #000000 0px 0px 10px 0px;
+  color: #fff;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 2px;
+  width: auto;
+  box-sizing: border-box;
+  animation: fadeInZoom 2s ease 0s 1 normal forwards,
     particleEffect 1s ease 2s 1 normal forwards,
     textGlow 3s ease 3s 1 normal forwards,
     quickShake 0.5s ease 6s 1 normal forwards,
     finalFlash 1s ease 7s 1 normal forwards;
-  }
-  
-  #intro-section p {
-    font-size: 1.5rem;
-  }
-  
+}
+
+#intro-section p {
+  font-size: 1.5rem;
+}
+
 /* Container for the buttons */
 #action-section {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(135, 79, 53, 0.81);
+  background: linear-gradient(to right, rgba(135, 79, 54, 0.81), rgba(179, 173, 166, 0.81), rgba(176, 138, 77, 0.56));
   border: 0.2rem solid black;
   border-radius: 0.5rem;
   margin-top: 1rem;
 }
 
 /* Individual Button Styles */
-#initiate-quiz, #game-rules {
-  font-family: 'just me again down here', cursive;
+#initiate-quiz,
+#game-rules {
+  font-family: "just me again down here", cursive;
   font-size: 1.5rem !important;
-  background-color: #FEC833;
+  background-color: #fec833;
   box-shadow: #000000 0px 0px 10px 0px;
   color: rgb(19, 18, 18);
   border: 0.3rem solid black;
@@ -125,9 +121,8 @@ body {
   white-space: nowrap;
   overflow: hidden;
   align-content: center;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
-
 
 /* Action Section */
 #action-section {
@@ -135,7 +130,7 @@ body {
   flex-direction: column;
   align-items: center;
   box-shadow: #000000 0px 0px 10px 0px;
-  margin-top: 5rem; 
+  margin-top: 5rem;
   padding: 8rem;
 }
 
@@ -143,9 +138,8 @@ body {
 #button-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
-
 
 #instruction-popup {
   display: none;
@@ -162,8 +156,6 @@ body {
   margin-top: 5rem;
   padding: 1rem;
 }
-
-
 
 /* Anime-Inspired Animation Sequence */
 
@@ -191,7 +183,8 @@ body {
 
 /* Text Glow */
 @keyframes textGlow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: none;
   }
   50% {
@@ -201,7 +194,8 @@ body {
 
 /* Quick Shake */
 @keyframes quickShake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   25% {
@@ -214,7 +208,8 @@ body {
 
 /* Final Flash (a sudden change in background color) */
 @keyframes finalFlash {
-  0%, 100% {
+  0%,
+  100% {
     background: rgba(0, 0, 0, 0.8);
   }
   50% {
