@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Just Me Again Down Here', cursive;
-    background-color: #C4C4C4; /* Main background color */
+    background-color: #C4C4C4;
     width: 100%;
     height: 100%;
   }
@@ -19,7 +19,7 @@ body {
   #main-header {
     display: flex;
     justify-content: center;
-    align-items: center; /* vertically aligns the text and the SVG */
+    align-items: center;
     background-color: #FEC833;
     border-bottom: 0.2rem solid black;
     padding: 0.5rem;
@@ -31,9 +31,9 @@ body {
   
 
   #header-icon {
-    width: 30px;  /* Adjust size based on your preference */
+    width: 30px;
     height: auto;
-    margin-right: 0.5rem; /* Adds some space between the SVG and the text */
+    margin-right: 0.5rem;
   }
   
 
@@ -74,12 +74,13 @@ body {
   
 
   #intro-section {
-    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-    color: #fff; /* White text for better visibility */
-    text-align: center; /* Center text horizontally */
-    margin-top: 1rem; /* 1rem space from the header */
-    padding: 1rem; /* Internal spacing */
-    border-radius: 2px; /* Optional, for rounded corners */
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: #000000 0px 0px 10px 0px;
+    color: #fff;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 2px;
     width: auto;
     box-sizing: border-box;
   }
@@ -92,22 +93,33 @@ body {
 #action-section {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Centers buttons horizontally */
-  justify-content: center; /* Centers buttons vertically */
-  background-color: rgba(135, 79, 53, 0.81); /* Semi-transparent background */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(135, 79, 53, 0.81);
   border: 0.2rem solid black;
+  border-radius: 0.5rem;
   margin-top: 1rem;
 }
 
 /* Individual Button Styles */
 #initiate-quiz, #game-rules {
-  background-color: #FEC833; /* Header color */
-  color: white;
+  font-family: 'just me again down here', cursive;
+  font-size: 1.5rem !important;
+  background-color: #FEC833;
+  box-shadow: #000000 0px 0px 10px 0px;
+  color: rgb(19, 18, 18);
   border: 0.3rem solid black;
+  border-radius: 0.5rem;
   padding: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   margin: 0.5rem;
-  font-size: 1.5rem;
   cursor: pointer;
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  overflow: hidden;
+  align-content: center;
+  text-overflow: ellipsis; 
 }
 
 
@@ -115,13 +127,32 @@ body {
 #action-section {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center buttons horizontally */
+  align-items: center;
+  box-shadow: #000000 0px 0px 10px 0px;
+  margin-top: 5rem; 
+  padding: 8rem;
 }
 
 /* Button Wrapper */
 #button-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Center buttons horizontally */
+  align-items: center; 
 }
 
+
+#instruction-popup {
+  display: none;
+}
+
+#footer-section {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: #000000 0px 0px 10px 0px;
+  font-size: 1.3rem;
+  color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  padding: 1rem;
+}
