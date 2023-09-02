@@ -83,6 +83,12 @@ body {
     border-radius: 2px;
     width: auto;
     box-sizing: border-box;
+    animation: 
+    fadeInZoom 2s ease 0s 1 normal forwards,
+    particleEffect 1s ease 2s 1 normal forwards,
+    textGlow 3s ease 3s 1 normal forwards,
+    quickShake 0.5s ease 6s 1 normal forwards,
+    finalFlash 1s ease 7s 1 normal forwards;
   }
   
   #intro-section p {
@@ -155,4 +161,63 @@ body {
   align-items: center;
   margin-top: 5rem;
   padding: 1rem;
+}
+
+
+
+/* Anime-Inspired Animation Sequence */
+
+/* Fade In & Zoom */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Particle Effect (represented by a box-shadow glow here) */
+@keyframes particleEffect {
+  0% {
+    box-shadow: 0 0 5px #fff;
+  }
+  100% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #fff;
+  }
+}
+
+/* Text Glow */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de;
+  }
+}
+
+/* Quick Shake */
+@keyframes quickShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Final Flash (a sudden change in background color) */
+@keyframes finalFlash {
+  0%, 100% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    background: #977428;
+  }
 }
