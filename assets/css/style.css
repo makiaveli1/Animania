@@ -116,6 +116,7 @@ body {
 #game-rules {
   font-family: "just me again down here", cursive;
   font-size: 1.5rem !important;
+  transition: all 0.3s ease;
   background-image: linear-gradient(to bottom, rgba(254, 51, 51, 0.514), rgba(255, 255, 255, 0.897));
   box-shadow: #000000 0px 0px 10px 0px;
   text-shadow: 2px 2px 4px #000000;
