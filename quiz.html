@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animania Quiz</title>
+    <link rel="stylesheet" href="assets\css\quiz_style.css">
+</head>
+<body>
+    <header>
+        <h1>Animania Quiz</h1>
+    </header>
+
+    <main>
+        <!-- Category Selection Popup -->
+        <div id="category-popup" class="popup">
+            <span id="close-popup">×</span>
+            <h2>Select a Category</h2>
+            <div id="category-buttons" class="btn-container">
+                <button class="category-btn" data-category="anime">Anime</button>
+                <button class="category-btn" data-category="manga">Manga</button>
+                <button class="category-btn" data-category="characters">Characters</button>
+                <button class="category-btn" data-category="history">Anime History</button>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <section id="quiz-container" class="hidden">
+            <div id="question-box">
+                <h2 id="question">Question will appear here</h2>
+            </div>
+            <div id="answer-buttons" class="btn-container">
+                <!-- Answer buttons will be populated here -->
+            </div>
+            <button id="next-question" class="hidden">Next</button>
+        </section>
+
+        <!-- Quiz Summary -->
+        <section id="quiz-summary" class="hidden">
+            <h2>Your Score: <span id="final-score"></span></h2>
+            <button id="restart-quiz">Play Again</button>
+        </section>
+    </main>
+
+    <script src="assets\js\quiz.js"></script>
+</body>
+</html>
