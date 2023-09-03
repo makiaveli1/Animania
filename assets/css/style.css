@@ -15,6 +15,7 @@ body {
 }
 
 #main-header {
+  position: fixed;
   font-family: "Source Serif 4", sans-serif;
   display: flex;
   justify-content: center;
@@ -25,6 +26,7 @@ body {
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+  z-index: 99;
 }
 
 #main-header span {
@@ -77,11 +79,12 @@ body {
 }
 
 #intro-section {
+  position: relative;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: #000000 0px 0px 10px 0px;
   color: #fff;
   text-align: center;
-  margin-top: 1rem;
+  top: 8rem;
   padding: 1rem;
   border-radius: 2px;
   width: auto;
@@ -99,6 +102,7 @@ body {
 
 /* Container for the buttons */
 #action-section {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -107,7 +111,7 @@ body {
   box-shadow: #000000 0px 0px 10px 0px;
   border: 0.2rem solid black;
   border-radius: 0.5rem;
-  margin-top: 5rem;
+  margin-top: 10rem;
   padding: 8rem;
 }
 
@@ -174,9 +178,67 @@ body {
 }
 
 
+/* Instruction Popup */
 #instruction-popup {
-  display: none;
+  display: none; /* Initially hidden */
+  left: 0;
+  flex-direction: column;
+  background: linear-gradient(to right, rgba(135, 79, 54, 0.81), rgba(179, 173, 166, 0.81), rgba(176, 138, 77, 0.56));
+  box-shadow: #000000 0px 0px 10px 0px;
+  border: 0.2rem solid black;
+  border-radius: 0.5rem;
+  padding: 8rem;
+  position: relative;
 }
+
+/* Inner background for popup text */
+#instruction-popup:after {
+  content: "";
+  display: block;	
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: #fec833;
+  z-index: -1;
+}
+
+#instruction-popup p {
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+/* Close button */
+#close-popup {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 3rem;
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+}
+
+/* Press down effect */
+#close-popup:hover {
+  transform: translateY(4px);
+}
+
+/* Pop-out animation */
+#instruction-popup.show-popup {
+  animation: popOut 0.5s ease-out;
+}
+
+#popup-title {
+  position: relative;
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  align-content: center;
+  top: -7rem;
+  text-shadow: #000000 0px 0px 10px 0px;
+  z-index: 2;
+}
+
 
 #footer-section {
   background-color: rgba(0, 0, 0, 0.7);
@@ -265,4 +327,15 @@ body {
   55%  { box-shadow: none; }
   70%  { box-shadow: #a33b3b 0px 0px 10px 5px; }
   100% { box-shadow: none; }
+}
+
+@keyframes popOut {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
