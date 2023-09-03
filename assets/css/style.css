@@ -181,6 +181,8 @@ body {
 /* Instruction Popup */
 #instruction-popup {
   display: none; /* Initially hidden */
+  position: absolute;
+  top: 10rem;
   left: 0;
   flex-direction: column;
   background: linear-gradient(to right, rgba(135, 79, 54, 0.81), rgba(179, 173, 166, 0.81), rgba(176, 138, 77, 0.56));
@@ -188,20 +190,20 @@ body {
   border: 0.2rem solid black;
   border-radius: 0.5rem;
   padding: 8rem;
-  position: relative;
+  z-index: 1;
 }
 
 /* Inner background for popup text */
 #instruction-popup:after {
   content: "";
-  display: block;	
+  display: block;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   position: absolute;
-  background-color: #fec833;
-  z-index: -1;
+  background-color: #fec833fa;
+  z-index: -99;
 }
 
 #instruction-popup p {

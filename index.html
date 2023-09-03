@@ -25,35 +25,34 @@
     <div id="saitama-bg" class="anime-bg"></div>
     <div id="luffy-bg" class="anime-bg"></div>
 
-    <section id="intro-section">
-      <!-- Section for a brief anime-related quote or tagline -->
-      <article id="anime-quote">
-        <p>"To be the very best, like no one ever was!"</p>
-      </article>
-    </section>
-
     <main id="main-content">
-      <section id="action-section">
-        <div id="button-wrapper">
-          <!-- Wrapper div for buttons -->
-          <button id="initiate-quiz">Instructions</button>
-          <button id="game-rules">Dive-in</button>
-        </div>
+      <section id="intro-section">
+        <article id="anime-quote">
+          <p>"To be the very best, like no one ever was!"</p>
+        </article>
       </section>
-          <!-- Popup for 'How to Play' -->
-    <div
-    id="instruction-popup"
-    class="hidden"
-    role="dialog"
-    aria-labelledby="popup-title"
-  >
-    <span id="close-popup">×</span>
-    <h2 id="popup-title">How to Play Animania</h2>
-    <p>Your guide to mastering this quiz.</p>
-  </div>
 
+      <div id="action-container">
+        <!-- Added a container around action-section and instruction-popup -->
+        <section id="action-section">
+          <div id="button-wrapper">
+            <button id="initiate-quiz">Instructions</button>
+            <button id="game-rules">Dive-in</button>
+          </div>
+        </section>
+
+        <div
+          id="instruction-popup"
+          class="hidden"
+          role="dialog"
+          aria-labelledby="popup-title"
+        >
+          <span id="close-popup">×</span>
+          <h2 id="popup-title">How to Play Animania</h2>
+          <p>Your guide to mastering this quiz.</p>
+        </div>
+      </div>
     </main>
-
     <footer id="footer-section">
       <p>Made with ❤️ by an Anime Fan</p>
     </footer>
