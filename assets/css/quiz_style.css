@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   font-family: "Just Me Again Down Here", cursive;
   background-color: #c4c4c4;
@@ -96,8 +97,9 @@ body {
   box-shadow: #000000 0px 0px 10px 0px;
   border: 0.2rem solid black;
   border-radius: 0.5rem;
-  top: 15rem;
+  top: 10rem;
   padding: 5rem;
+  z-index: 1;
 }
 
 #category-section h2 {
@@ -105,22 +107,10 @@ body {
   margin-bottom: 5rem;
 }
 
-/* Close button */
-#close-popup {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 3rem;
-  position: absolute;
-  top: -1rem;
-  right: 1rem;
-}
-
-/* Press down effect */
 #close-popup:hover {
   transform: translateY(4px);
 }
 
-/* Category Buttons */
 .category-btn {
   font-family: "just me again down here", cursive;
   font-size: 1.5rem !important;
@@ -131,7 +121,7 @@ body {
     rgba(255, 255, 255, 0.897)
   );
   box-shadow: #000000 0px 0px 10px 0px;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px #ffbb00;
   color: rgb(19, 18, 18);
   border: 0.3rem solid black;
   border-radius: 0.5rem;
@@ -148,12 +138,10 @@ body {
   z-index: 1;
 }
 
-/* Click effect */
 .category-btn:active {
   transform: translateY(4px);
 }
 
-/* Pseudo-element for hover effect */
 .category-btn:before {
   content: "";
   position: absolute;
@@ -166,14 +154,13 @@ body {
   z-index: -1;
 }
 
-/* Hover effect */
 .category-btn:hover:before {
   opacity: 0.5;
 }
 
 /* Quiz Section */
 #quiz-section {
-  display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -187,9 +174,15 @@ body {
   border: 0.2rem solid black;
   border-radius: 0.5rem;
   padding: 3rem;
-  margin-top: 3rem;
-  z-index: -1;
+  z-index: 2;
+  top: 10rem;
 }
+
+
+#answer-buttons {
+  padding-top: 2rem;
+}
+
 
 .hidden {
   display: none;
@@ -200,40 +193,36 @@ body {
   position: absolute;
 }
 
-/* Quiz Answer Buttons */
 .answer-btn {
-  font-family: "Just Me Again Down Here", cursive;
-  font-size: 1.5rem !important;
-  transition: all 0.3s ease;
-  background-image: linear-gradient(
+    left: 15%;
+    font-family: "Just Me Again Down Here", cursive;
+    font-size: 1.5rem !important;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(
     to bottom,
     rgba(254, 51, 51, 0.514),
     rgba(255, 255, 255, 0.897)
   );
-  box-shadow: #000000 0px 0px 10px 0px;
-  text-shadow: 2px 2px 4px #000000;
-  color: rgb(19, 18, 18);
-  border: 0.3rem solid black;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  margin: 0.5rem;
-  cursor: pointer;
-  font-size: calc(1rem + 1vw);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  position: relative;
-  z-index: -1;
+    box-shadow: #000000 0px 0px 10px 0px;
+    text-shadow: 2px 2px 4px #ffbb00;
+    color: rgb(19, 18, 18);
+    border: 0.3rem solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: 0.3rem;
+    cursor: pointer;
+    font-size: calc(1rem + 1vw);
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
 }
 
-/* Click effect */
 .answer-btn:active {
   transform: translateY(4px);
 }
 
-/* Pseudo-element for hover effect */
 .answer-btn:before {
   content: "";
   position: absolute;
@@ -246,12 +235,10 @@ body {
   z-index: -1;
 }
 
-/* Hover effect */
 .answer-btn:hover:before {
   opacity: 0.5;
 }
 
-/* Next Question Button */
 #next-question {
   font-family: "Just Me Again Down Here", cursive;
   font-size: 1.5rem !important;
@@ -262,7 +249,7 @@ body {
     rgba(255, 255, 255, 0.897)
   );
   box-shadow: #000000 0px 0px 10px 0px;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px #ffbb00;
   color: rgb(19, 18, 18);
   border: 0.3rem solid black;
   border-radius: 0.5rem;
@@ -279,12 +266,10 @@ body {
   z-index: -1;
 }
 
-/* Click effect */
 #next-question:active {
   transform: translateY(4px);
 }
 
-/* Pseudo-element for hover effect */
 #next-question:before {
   content: "";
   position: absolute;
@@ -297,11 +282,28 @@ body {
   z-index: -1;
 }
 
-/* Hover effect */
 #next-question:hover:before {
   opacity: 0.5;
 }
 
+#category-section,
+#quiz-section {
+  transition: opacity 0.5s ease;
+}
+
+.active {
+  opacity: 1;
+  display: flex;
+  pointer-events: auto;
+}
+
+.inactive {
+  opacity: 0;
+  display: none;
+  pointer-events: none;
+}
+
+/* Footer Section */
 #footer-section {
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: #000000 0px 0px 10px 0px;
@@ -310,7 +312,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 6rem;
+  margin-top: 20rem;
   padding: 1rem;
 }
 
@@ -328,7 +330,6 @@ body {
   }
 }
 
-/* Particle Effect (represented by a box-shadow glow here) */
 @keyframes particleEffect {
   0% {
     box-shadow: 0 0 5px #fff;
@@ -338,7 +339,6 @@ body {
   }
 }
 
-/* Text Glow */
 @keyframes textGlow {
   0%,
   100% {
@@ -349,7 +349,6 @@ body {
   }
 }
 
-/* Quick Shake */
 @keyframes quickShake {
   0%,
   100% {
@@ -369,7 +368,6 @@ body {
   }
 }
 
-/* Final Flash (a sudden change in background color) */
 @keyframes finalFlash {
   0%,
   100% {

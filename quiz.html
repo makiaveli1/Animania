@@ -12,52 +12,60 @@
   </head>
   <body>
     <header id="main-header">
-        <a href="index.html">
-          <img
-            id="header-icon"
-            src="assets/images/lelouch.svg"
-            alt="Animania Icon"
-          />
-          <span>ANIMANIA</span>
-        </a>
-      </header>
+      <a href="index.html">
+        <img
+          id="header-icon"
+          src="assets/images/lelouch.svg"
+          alt="Animania Icon"
+        />
+        <span>ANIMANIA</span>
+      </a>
+    </header>
     <div id="goku-bg" class="anime-bg"></div>
     <div id="naruto-bg" class="anime-bg"></div>
     <div id="saitama-bg" class="anime-bg"></div>
     <div id="luffy-bg" class="anime-bg"></div>
 
     <main>
-        <!-- Category Selection Popup -->
-        <div id="category-section" class="popup">
-            <span id="close-popup">×</span>
-            <h2>Select a Category</h2>
-            <div id="category-buttons" class="btn-container">
-                <button class="category-btn" data-category="anime">Anime</button>
-                <button class="category-btn" data-category="manga">Manga</button>
-                <button class="category-btn" data-category="characters">Characters</button>
-                <button class="category-btn" data-category="history">Anime History</button>
-            </div>
+      <!-- Category Selection Popup -->
+      <div id="category-section" class="popup">
+        <h2>Select a Category</h2>
+        <div id="category-buttons" class="btn-container">
+          <button class="category-btn" data-category="anime">Anime</button>
+          <button class="category-btn" data-category="manga">Manga</button>
+          <button class="category-btn" data-category="characters">
+            Characters
+          </button>
+          <button class="category-btn" data-category="history">
+            Anime History
+          </button>
         </div>
+      </div>
 
-        <!-- Quiz Section -->
-        <div id="quiz-section" class="hidden">
-            <h2 id="quiz-question">Question 1: What is the main character's name in Naruto?</h2>
-            <div id="answer-buttons" class="btn-container">
-              <button class="answer-btn">Naruto</button>
-              <button class="answer-btn">Sasuke</button>
-              <button class="answer-btn">Sakura</button>
-              <button class="answer-btn">Kakashi</button>
-            </div>
-            <button id="next-question" class="next-button hidden">Next</button>
-          </div>
+      <!-- Quiz Section -->
+      <div id="quiz-section" class="hidden">
+        <h2 id="quiz-question">
+          Question 1: What is the main character's name in Naruto?
+        </h2>
+        <div id="answer-buttons" class="btn-container">
+          <button class="answer-btn">Naruto</button>
+          <button class="answer-btn">Sasuke</button>
+          <button class="answer-btn">Sakura</button>
+          <button class="answer-btn">Kakashi</button>
+        </div>
+        <button id="next-question" class="next-button hidden">Next</button>
+      </div>
 
-        <!-- Quiz Summary -->
-        <section id="quiz-summary" class="hidden">
-            <h2>Your Score: <span id="final-score"></span></h2>
-            <button id="restart-quiz">Play Again</button>
-        </section>
+      <!-- Quiz Summary -->
+      <section id="quiz-summary" class="hidden">
+        <h2>Your Score: <span id="final-score"></span></h2>
+        <button id="restart-quiz">Play Again</button>
+      </section>
     </main>
+    <footer id="footer-section">
+      <p>Made with ❤️ by an Anime Fan</p>
+    </footer>
 
     <script src="assets/js/quiz.js"></script>
-</body>
+  </body>
 </html>

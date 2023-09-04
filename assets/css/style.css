@@ -101,7 +101,6 @@ body {
   font-size: 1.5rem;
 }
 
-/* Container for the buttons */
 #action-section {
   position: relative;
   display: flex;
@@ -121,7 +120,6 @@ body {
   padding: 8rem;
 }
 
-/* Individual Button Styles */
 #initiate-quiz,
 #game-rules {
   font-family: "just me again down here", cursive;
@@ -133,7 +131,7 @@ body {
     rgba(255, 255, 255, 0.897)
   );
   box-shadow: #000000 0px 0px 10px 0px;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px #ffbb00;
   color: rgb(19, 18, 18);
   border: 0.3rem solid black;
   border-radius: 0.5rem;
@@ -154,7 +152,6 @@ body {
   transform: translateY(4px);
 }
 
-/* Button Wrapper */
 #button-wrapper {
   display: flex;
   flex-direction: column;
@@ -166,7 +163,6 @@ body {
   z-index: 1;
 }
 
-/* Add a pseudo-element for hover effect */
 #button-wrapper button:before {
   content: "";
   position: absolute;
@@ -175,16 +171,14 @@ body {
   right: 0;
   bottom: 0;
   background-color: #ffbb00;
-  opacity: 1; /* Add this */
+  opacity: 1;
   z-index: -1;
 }
 
-/* Hover effect for background */
 #button-wrapper button:hover:before {
   opacity: 0.5;
 }
 
-/* Instruction Popup */
 #instruction-popup {
   display: none; /* Initially hidden */
   position: absolute;
@@ -204,7 +198,6 @@ body {
   z-index: 1;
 }
 
-/* Inner background for popup text */
 #instruction-popup:after {
   content: "";
   display: block;
@@ -222,7 +215,6 @@ body {
   z-index: 2;
 }
 
-/* Close button */
 #close-popup {
   cursor: pointer;
   transition: all 0.3s ease;
@@ -232,12 +224,10 @@ body {
   right: 1rem;
 }
 
-/* Press down effect */
 #close-popup:hover {
   transform: translateY(4px);
 }
 
-/* Pop-out animation */
 #instruction-popup.show-popup {
   animation: popOut 0.5s ease-out;
 }
@@ -248,7 +238,7 @@ body {
   white-space: nowrap;
   align-content: center;
   top: -7rem;
-  text-shadow: #000000 0px 0px 10px 0px;
+  text-shadow: #ffbb00 0px 0px 10px 0px;
   z-index: 2;
 }
 
@@ -266,7 +256,6 @@ body {
 
 /* Anime-Inspired Animation Sequence */
 
-/* Fade In & Zoom */
 @keyframes fadeInZoom {
   0% {
     opacity: 0;
@@ -278,7 +267,6 @@ body {
   }
 }
 
-/* Particle Effect (represented by a box-shadow glow here) */
 @keyframes particleEffect {
   0% {
     box-shadow: 0 0 5px #fff;
@@ -288,7 +276,6 @@ body {
   }
 }
 
-/* Text Glow */
 @keyframes textGlow {
   0%,
   100% {
@@ -299,7 +286,6 @@ body {
   }
 }
 
-/* Quick Shake */
 @keyframes quickShake {
   0%,
   100% {
@@ -319,7 +305,6 @@ body {
   }
 }
 
-/* Final Flash (a sudden change in background color) */
 @keyframes finalFlash {
   0%,
   100% {
