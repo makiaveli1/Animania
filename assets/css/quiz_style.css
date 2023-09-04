@@ -303,6 +303,14 @@ body {
   pointer-events: none;
 }
 
+.error-message {
+  color: red;
+  font-size: 1.2em;
+  margin-top: 10px;
+  display: none;  /* Initially hidden */
+}
+
+
 /* Footer Section */
 #footer-section {
   background-color: rgba(0, 0, 0, 0.7);
