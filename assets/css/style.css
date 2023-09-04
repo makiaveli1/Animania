@@ -14,7 +14,6 @@ body {
   height: 100%;
 }
 
-
 #main-header a {
   text-decoration: none;
   position: fixed;
@@ -30,7 +29,6 @@ body {
   box-sizing: border-box;
   z-index: 99;
 }
-
 
 #main-header span {
   font-size: 1.5rem;
@@ -110,7 +108,12 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, rgba(135, 79, 54, 0.81), rgba(179, 173, 166, 0.81), rgba(176, 138, 77, 0.56));
+  background: linear-gradient(
+    to right,
+    rgba(135, 79, 54, 0.81),
+    rgba(179, 173, 166, 0.81),
+    rgba(176, 138, 77, 0.56)
+  );
   box-shadow: #000000 0px 0px 10px 0px;
   border: 0.2rem solid black;
   border-radius: 0.5rem;
@@ -124,7 +127,11 @@ body {
   font-family: "just me again down here", cursive;
   font-size: 1.5rem !important;
   transition: all 0.3s ease;
-  background-image: linear-gradient(to bottom, rgba(254, 51, 51, 0.514), rgba(255, 255, 255, 0.897));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(254, 51, 51, 0.514),
+    rgba(255, 255, 255, 0.897)
+  );
   box-shadow: #000000 0px 0px 10px 0px;
   text-shadow: 2px 2px 4px #000000;
   color: rgb(19, 18, 18);
@@ -142,12 +149,10 @@ body {
   text-overflow: ellipsis;
 }
 
-
 #initiate-quiz:active,
 #game-rules:active {
   transform: translateY(4px);
 }
-
 
 /* Button Wrapper */
 #button-wrapper {
@@ -155,7 +160,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
 
 #button-wrapper button {
   position: relative;
@@ -166,12 +170,12 @@ body {
 #button-wrapper button:before {
   content: "";
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #ffbb00;
-  opacity: 1;  /* Add this */
+  opacity: 1; /* Add this */
   z-index: -1;
 }
 
@@ -180,7 +184,6 @@ body {
   opacity: 0.5;
 }
 
-
 /* Instruction Popup */
 #instruction-popup {
   display: none; /* Initially hidden */
@@ -188,7 +191,12 @@ body {
   top: 10rem;
   left: 0;
   flex-direction: column;
-  background: linear-gradient(to right, rgba(135, 79, 54, 0.81), rgba(179, 173, 166, 0.81), rgba(176, 138, 77, 0.56));
+  background: linear-gradient(
+    to right,
+    rgba(135, 79, 54, 0.81),
+    rgba(179, 173, 166, 0.81),
+    rgba(176, 138, 77, 0.56)
+  );
   box-shadow: #000000 0px 0px 10px 0px;
   border: 0.2rem solid black;
   border-radius: 0.5rem;
@@ -243,7 +251,6 @@ body {
   text-shadow: #000000 0px 0px 10px 0px;
   z-index: 2;
 }
-
 
 #footer-section {
   background-color: rgba(0, 0, 0, 0.7);
@@ -324,14 +331,30 @@ body {
 }
 
 @keyframes boxFlicker {
-  0%   { box-shadow: #ff0000 0px 0px 10px 5px; }
-  20%  { box-shadow: none; }
-  30%  { box-shadow: #be6464 0px 0px 10px 5px; }
-  35%  { box-shadow: none; }
-  50%  { box-shadow: #7c3823 0px 0px 10px 5px; }
-  55%  { box-shadow: none; }
-  70%  { box-shadow: #a33b3b 0px 0px 10px 5px; }
-  100% { box-shadow: none; }
+  0% {
+    box-shadow: #ff0000 0px 0px 10px 5px;
+  }
+  20% {
+    box-shadow: none;
+  }
+  30% {
+    box-shadow: #be6464 0px 0px 10px 5px;
+  }
+  35% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: #7c3823 0px 0px 10px 5px;
+  }
+  55% {
+    box-shadow: none;
+  }
+  70% {
+    box-shadow: #a33b3b 0px 0px 10px 5px;
+  }
+  100% {
+    box-shadow: none;
+  }
 }
 
 @keyframes popOut {

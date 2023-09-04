@@ -107,68 +107,200 @@ body {
 
 /* Close button */
 #close-popup {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 3rem;
-    position: absolute;
-    top: -1rem;
-    right: 1rem;
-  }
-  
-  /* Press down effect */
-  #close-popup:hover {
-    transform: translateY(4px);
-  }
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 3rem;
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+}
+
+/* Press down effect */
+#close-popup:hover {
+  transform: translateY(4px);
+}
 
 /* Category Buttons */
 .category-btn {
-    font-family: "just me again down here", cursive;
-    font-size: 1.5rem !important;
-    transition: all 0.3s ease;
-    background-image: linear-gradient(to bottom, rgba(254, 51, 51, 0.514), rgba(255, 255, 255, 0.897));
-    box-shadow: #000000 0px 0px 10px 0px;
-    text-shadow: 2px 2px 4px #000000;
-    color: rgb(19, 18, 18);
-    border: 0.3rem solid black;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    margin: 0.5rem;
-    cursor: pointer;
-    font-size: calc(1rem + 1vw);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Click effect */
-  .category-btn:active {
-    transform: translateY(4px);
-  }
-  
-  /* Pseudo-element for hover effect */
-  .category-btn:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffbb00;
-    opacity: 1;
-    z-index: -1;
-  }
-  
-  /* Hover effect */
-  .category-btn:hover:before {
-    opacity: 0.5;
-  }
-  
+  font-family: "just me again down here", cursive;
+  font-size: 1.5rem !important;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(254, 51, 51, 0.514),
+    rgba(255, 255, 255, 0.897)
+  );
+  box-shadow: #000000 0px 0px 10px 0px;
+  text-shadow: 2px 2px 4px #000000;
+  color: rgb(19, 18, 18);
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: 1;
+}
 
+/* Click effect */
+.category-btn:active {
+  transform: translateY(4px);
+}
 
+/* Pseudo-element for hover effect */
+.category-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffbb00;
+  opacity: 1;
+  z-index: -1;
+}
+
+/* Hover effect */
+.category-btn:hover:before {
+  opacity: 0.5;
+}
+
+/* Quiz Section */
+#quiz-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgba(135, 79, 54, 0.81),
+    rgba(179, 173, 166, 0.81),
+    rgba(176, 138, 77, 0.56)
+  );
+  box-shadow: #000000 0px 0px 10px 0px;
+  border: 0.2rem solid black;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  margin-top: 3rem;
+  z-index: -1;
+}
+
+.hidden {
+  display: none;
+}
+
+.inactive {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* Quiz Answer Buttons */
+.answer-btn {
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 1.5rem !important;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(254, 51, 51, 0.514),
+    rgba(255, 255, 255, 0.897)
+  );
+  box-shadow: #000000 0px 0px 10px 0px;
+  text-shadow: 2px 2px 4px #000000;
+  color: rgb(19, 18, 18);
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: -1;
+}
+
+/* Click effect */
+.answer-btn:active {
+  transform: translateY(4px);
+}
+
+/* Pseudo-element for hover effect */
+.answer-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffbb00;
+  opacity: 1;
+  z-index: -1;
+}
+
+/* Hover effect */
+.answer-btn:hover:before {
+  opacity: 0.5;
+}
+
+/* Next Question Button */
+#next-question {
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 1.5rem !important;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(254, 51, 51, 0.514),
+    rgba(255, 255, 255, 0.897)
+  );
+  box-shadow: #000000 0px 0px 10px 0px;
+  text-shadow: 2px 2px 4px #000000;
+  color: rgb(19, 18, 18);
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: -1;
+}
+
+/* Click effect */
+#next-question:active {
+  transform: translateY(4px);
+}
+
+/* Pseudo-element for hover effect */
+#next-question:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffbb00;
+  opacity: 1;
+  z-index: -1;
+}
+
+/* Hover effect */
+#next-question:hover:before {
+  opacity: 0.5;
+}
 
 #footer-section {
   background-color: rgba(0, 0, 0, 0.7);
