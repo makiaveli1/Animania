@@ -14,7 +14,8 @@ body {
   height: 100%;
 }
 
-#main-header {
+#main-header a {
+  text-decoration: none;
   position: fixed;
   font-family: "Source Serif 4", sans-serif;
   display: flex;
@@ -35,6 +36,7 @@ body {
   border: #000000 0.3rem solid;
   box-shadow: #3d3b3b 0px 0px 10px 5px;
   animation: boxFlicker 3s infinite alternate;
+  z-index: 99;
 }
 
 #header-icon {
@@ -76,4 +78,210 @@ body {
   right: -10%;
   bottom: 0;
   top: 50%;
+}
+
+/* Category Section */
+#category-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgba(135, 79, 54, 0.81),
+    rgba(179, 173, 166, 0.81),
+    rgba(176, 138, 77, 0.56)
+  );
+  box-shadow: #000000 0px 0px 10px 0px;
+  border: 0.2rem solid black;
+  border-radius: 0.5rem;
+  top: 15rem;
+  padding: 5rem;
+}
+
+#category-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+/* Close button */
+#close-popup {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 3rem;
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+  }
+  
+  /* Press down effect */
+  #close-popup:hover {
+    transform: translateY(4px);
+  }
+
+/* Category Buttons */
+.category-btn {
+    font-family: "just me again down here", cursive;
+    font-size: 1.5rem !important;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(to bottom, rgba(254, 51, 51, 0.514), rgba(255, 255, 255, 0.897));
+    box-shadow: #000000 0px 0px 10px 0px;
+    text-shadow: 2px 2px 4px #000000;
+    color: rgb(19, 18, 18);
+    border: 0.3rem solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: calc(1rem + 1vw);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Click effect */
+  .category-btn:active {
+    transform: translateY(4px);
+  }
+  
+  /* Pseudo-element for hover effect */
+  .category-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffbb00;
+    opacity: 1;
+    z-index: -1;
+  }
+  
+  /* Hover effect */
+  .category-btn:hover:before {
+    opacity: 0.5;
+  }
+  
+
+
+
+#footer-section {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: #000000 0px 0px 10px 0px;
+  font-size: 1.3rem;
+  color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+  padding: 1rem;
+}
+
+/* Anime-Inspired Animation Sequence */
+
+/* Fade In & Zoom */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Particle Effect (represented by a box-shadow glow here) */
+@keyframes particleEffect {
+  0% {
+    box-shadow: 0 0 5px #fff;
+  }
+  100% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #fff;
+  }
+}
+
+/* Text Glow */
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de;
+  }
+}
+
+/* Quick Shake */
+@keyframes quickShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  5% {
+    transform: translateX(-10px);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Final Flash (a sudden change in background color) */
+@keyframes finalFlash {
+  0%,
+  100% {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    background: #977428;
+  }
+}
+
+@keyframes boxFlicker {
+  0% {
+    box-shadow: #ff0000 0px 0px 10px 5px;
+  }
+  20% {
+    box-shadow: none;
+  }
+  30% {
+    box-shadow: #be6464 0px 0px 10px 5px;
+  }
+  35% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: #7c3823 0px 0px 10px 5px;
+  }
+  55% {
+    box-shadow: none;
+  }
+  70% {
+    box-shadow: #a33b3b 0px 0px 10px 5px;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes popOut {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

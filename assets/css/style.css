@@ -14,7 +14,9 @@ body {
   height: 100%;
 }
 
-#main-header {
+
+#main-header a {
+  text-decoration: none;
   position: fixed;
   font-family: "Source Serif 4", sans-serif;
   display: flex;
@@ -28,6 +30,7 @@ body {
   box-sizing: border-box;
   z-index: 99;
 }
+
 
 #main-header span {
   font-size: 1.5rem;

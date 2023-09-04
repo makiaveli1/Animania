@@ -12,13 +12,15 @@
   </head>
   <body>
     <header id="main-header">
-      <img
-        id="header-icon"
-        src="assets\images\lelouch.svg"
-        alt="Animania Icon"
-      />
-      <span>ANIMANIA</span>
-    </header>
+      <a href="index.html">
+        <img
+          id="header-icon"
+          src="assets/images/lelouch.svg"
+          alt="Animania Icon"
+        />
+        <span>ANIMANIA</span>
+      </a>
+    </header>    
 
     <div id="goku-bg" class="anime-bg"></div>
     <div id="naruto-bg" class="anime-bg"></div>
@@ -36,9 +38,10 @@
         <section id="action-section">
           <div id="button-wrapper">
             <button id="initiate-quiz">Instructions</button>
-            <button id="game-rules">Dive-in</button>
+            <button id="game-rules" onclick="window.location.href='quiz.html'">Dive-in</button>
           </div>
         </section>
+      </div>
 
         <div
           id="instruction-popup"
