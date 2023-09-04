@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Animania Quiz</title>
-    <link rel="stylesheet" href="assets\css\quiz_style.css">
-</head>
-<body>
-    <header>
-        <h1>Animania Quiz</h1>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to Animania, the ultimate anime quiz game!"
+    />
+    <title>Welcome to Animania!</title>
+    <link rel="stylesheet" href="assets\css\style.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <img
+        id="header-icon"
+        src="assets\images\lelouch.svg"
+        alt="Animania Icon"
+      />
+      <span>ANIMANIA</span>
     </header>
+
+    <div id="goku-bg" class="anime-bg"></div>
+    <div id="naruto-bg" class="anime-bg"></div>
+    <div id="saitama-bg" class="anime-bg"></div>
+    <div id="luffy-bg" class="anime-bg"></div>
 
     <main>
         <!-- Category Selection Popup -->
-        <div id="category-popup" class="popup">
+        <div id="category-section" class="popup">
             <span id="close-popup">×</span>
             <h2>Select a Category</h2>
             <div id="category-buttons" class="btn-container">

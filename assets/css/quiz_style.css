@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&display=swap");
+
+/* Asterisk wildcard selector */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Just Me Again Down Here", cursive;
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 100%;
+}
+
+#main-header {
+  position: fixed;
+  font-family: "Source Serif 4", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fec833;
+  border-bottom: 0.2rem solid black;
+  padding: 0.5rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+#main-header span {
+  font-size: 1.5rem;
+  text-shadow: #000000 0px 0px 10px 0px;
+  border: #000000 0.3rem solid;
+  box-shadow: #3d3b3b 0px 0px 10px 5px;
+  animation: boxFlicker 3s infinite alternate;
+}
+
+#header-icon {
+  width: 30px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.anime-bg {
+  position: fixed;
+  width: 280px;
+  height: 480px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+#goku-bg {
+  background-image: url("../images/goku.svg");
+  left: -10%;
+  top: 5%;
+}
+
+#naruto-bg {
+  background-image: url("../images/naruto.svg");
+  right: -10%;
+  top: 5%;
+}
+
+#saitama-bg {
+  background-image: url("../images/saitama.svg");
+  left: -10%;
+  bottom: 0;
+  top: 50%;
+}
+
+#luffy-bg {
+  background-image: url("../images/luffy.svg");
+  right: -10%;
+  bottom: 0;
+  top: 50%;
+}
