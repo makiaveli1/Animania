@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Nanum+Pen+Script&family=Pangolin&family=Rock+Salt&family=Share+Tech+Mono&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&display=swap');
 
 /* Asterisk wildcard selector */
 * {
@@ -9,7 +9,7 @@
 
 /* Body */
 body {
-  font-family: "Just Me Again Down Here", cursive;
+  font-family: "Pangolin", sans-serif;
   background-color: #c4c4c4;
   width: 100%;
   height: 100%;
@@ -103,7 +103,7 @@ body {
 }
 
 #category-section h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 5rem;
 }
 
@@ -114,8 +114,8 @@ body {
 .category-btn {
   position: relative;
   left: 2.1rem;
-  font-family: "just me again down here", cursive;
-  font-size: 1.5rem !important;
+  font-family: "Pangolin", sans-serif;
+  font-size: 1rem !important;
   transition: all 0.3s ease;
   background-image: linear-gradient(
     to bottom,
@@ -180,11 +180,9 @@ body {
   top: 10rem;
 }
 
-
 #answer-buttons {
   padding-top: 2rem;
 }
-
 
 .hidden {
   display: none;
@@ -195,30 +193,33 @@ body {
   position: absolute;
 }
 
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+
 .answer-btn {
-    left: 15%;
-    font-family: "Just Me Again Down Here", cursive;
-    font-size: 1.5rem !important;
-    transition: all 0.3s ease;
-    background-image: linear-gradient(
-    to bottom,
-    rgba(254, 51, 51, 0.514),
-    rgba(255, 255, 255, 0.897)
-  );
-    box-shadow: #000000 0px 0px 10px 0px;
-    text-shadow: 2px 2px 4px #ffbb00;
-    color: rgb(19, 18, 18);
-    border: 0.3rem solid black;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    margin: 0.3rem;
-    cursor: pointer;
-    font-size: calc(1rem + 1vw);
-    white-space: nowrap;
-    position: relative;
-    z-index: 1;
+  left: 15%;
+  font-family: "Pangolin", sans-serif;
+  font-size: 1rem !important;
+  transition: all 0.3s ease;
+  box-shadow: #000000 0px 0px 10px 0px;
+  text-shadow: 2px 2px 4px #ffbb00;
+  color: rgb(19, 18, 18);
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin: 0.3rem;
+  cursor: pointer;
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .answer-btn:active {
@@ -242,8 +243,8 @@ body {
 }
 
 #next-question {
-  font-family: "Just Me Again Down Here", cursive;
-  font-size: 1.5rem !important;
+  font-family: "Pangolin", sans-serif;
+  font-size: 1rem !important;
   transition: all 0.3s ease;
   background-image: linear-gradient(
     to bottom,
@@ -309,15 +310,14 @@ body {
   color: red;
   font-size: 1.2em;
   margin-top: 10px;
-  display: none;  /* Initially hidden */
+  display: none; /* Initially hidden */
 }
-
 
 /* Footer Section */
 #footer-section {
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: #000000 0px 0px 10px 0px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #fcfcfc;
   display: flex;
   flex-direction: column;
