@@ -202,12 +202,11 @@ body {
 }
 
 .answer-btn {
-  left: 15%;
+  left: 4.5rem;
   font-family: "Pangolin", sans-serif;
   font-size: 1rem !important;
   transition: all 0.3s ease;
   box-shadow: #000000 0px 0px 10px 0px;
-  text-shadow: 2px 2px 4px #ffbb00;
   color: rgb(19, 18, 18);
   border: 0.3rem solid black;
   border-radius: 0.5rem;
@@ -239,53 +238,6 @@ body {
 }
 
 .answer-btn:hover:before {
-  opacity: 0.5;
-}
-
-#next-question {
-  font-family: "Pangolin", sans-serif;
-  font-size: 1rem !important;
-  transition: all 0.3s ease;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(254, 51, 51, 0.514),
-    rgba(255, 255, 255, 0.897)
-  );
-  box-shadow: #000000 0px 0px 10px 0px;
-  text-shadow: 2px 2px 4px #ffbb00;
-  color: rgb(19, 18, 18);
-  border: 0.3rem solid black;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  margin: 0.5rem;
-  cursor: pointer;
-  font-size: calc(1rem + 1vw);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  position: relative;
-  z-index: -1;
-}
-
-#next-question:active {
-  transform: translateY(4px);
-}
-
-#next-question:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ffbb00;
-  opacity: 1;
-  z-index: -1;
-}
-
-#next-question:hover:before {
   opacity: 0.5;
 }
 

@@ -32,11 +32,11 @@ function handleCategoryClick(category) {
   // Fetch data for the selected category
   fetchData(category);
 
-  // Fetch data for the selected category
-  fetchData(category);
-
   // Randomize questions and their answers
   randomizeQuizData();
+
+  // Fetch data for the selected category
+  fetchData(category);
 
   // Hide category section after transition
   setTimeout(() => {
@@ -57,39 +57,53 @@ function displayQuestion() {
     const button = document.createElement("button");
     button.innerText = answer;
     button.classList.add("answer-btn");
-    button.addEventListener("click", (event) => handleAnswerClick(answer, event));
+    const checkmarkSpan = document.createElement("span");
+    checkmarkSpan.innerText = " ✔";
+    checkmarkSpan.classList.add("checkmark");
+    checkmarkSpan.style.display = "none"; // Initially hidden
+    button.appendChild(checkmarkSpan);
+    button.addEventListener("click", (event) =>
+      handleAnswerClick(answer, checkmarkSpan, event)
+    );
     answerButtonsElement.appendChild(button);
   });
 }
 
-function handleAnswerClick(selectedAnswer, event) {
+function handleAnswerClick(selectedAnswer, checkmarkSpan, event) {
   const currentQuestion = quizData[currentQuestionIndex];
-  const clickedButton = event.target;  // Get the button that was clicked
+  const clickedButton = event.target.closest(".answer-btn"); // Make sure to get the button element
+  const allAnswerButtons = document.querySelectorAll(".answer-btn");
 
-  // Check if the answer is correct or wrong
+  let correctButton;
+  allAnswerButtons.forEach((button) => {
+    if (button.innerText.includes(currentQuestion.correctAnswer)) {
+      correctButton = button;
+    }
+  });
+
   if (selectedAnswer === currentQuestion.correctAnswer) {
     console.log("Correct!");
-    clickedButton.classList.add("correct"); // Add 'correct' class to the button
+    clickedButton.classList.add("correct"); // Turn the button green
+    // No need to show checkmark
   } else {
     console.log("Wrong!");
-    clickedButton.classList.add("wrong"); // Add 'wrong' class to the button
+    clickedButton.classList.add("wrong"); // Turn the button red
+    correctButton.querySelector(".checkmark").style.display = "inline"; // Show the checkmark next to the correct answer
   }
 
-  // Move to the next question or end the quiz
   currentQuestionIndex++;
   if (currentQuestionIndex < quizData.length) {
-    // Reset button colors before displaying the next question
     setTimeout(() => {
-      document.querySelectorAll(".answer-btn").forEach((button) => {
-        button.classList.remove("correct", "wrong"); // Remove added classes
+      allAnswerButtons.forEach((button) => {
+        button.classList.remove("correct", "wrong");
+        button.querySelector(".checkmark").style.display = "none"; // Hide checkmark
       });
       displayQuestion();
-    }, 1000);  // Delay for 1 second to show feedback
+    }, 2000); // Delay to show feedback
   } else {
     console.log("Quiz ended");
   }
 }
-
 
 // Function to shuffle an array (Fisher-Yates Shuffle)
 function shuffleArray(array) {
