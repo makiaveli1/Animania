@@ -37,6 +37,38 @@ function handleCategoryClick(category) {
   }, 500);
 }
 
+function displayQuestion() {
+  const questionElement = document.getElementById("quiz-question");
+  const answerButtonsElement = document.getElementById("answer-buttons");
+  const currentQuestion = quizData[currentQuestionIndex];
+
+  questionElement.textContent = currentQuestion.question;
+  answerButtonsElement.innerHTML = "";
+
+  currentQuestion.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerText = answer;
+    button.classList.add("answer-btn");
+    button.addEventListener("click", () => handleAnswerClick(answer));
+    answerButtonsElement.appendChild(button);
+  });
+}
+
+function handleAnswerClick(selectedAnswer) {
+  const currentQuestion = quizData[currentQuestionIndex];
+  if (selectedAnswer === currentQuestion.correctAnswer) {
+    console.log("Correct!");
+  } else {
+    console.log("Wrong!");
+  }
+  currentQuestionIndex++;
+  if (currentQuestionIndex < quizData.length) {
+    displayQuestion();
+  } else {
+    console.log("Quiz ended");
+  }
+}
+
 function fetchData(category) {
   // Populate quizData based on the selected category
   if (category === "anime") {
@@ -640,38 +672,8 @@ function fetchData(category) {
       },
     ];
   }
-
-  function displayQuestion() {
-    const questionElement = document.getElementById("quiz-question");
-    const answerButtonsElement = document.getElementById("answer-buttons");
-    const currentQuestion = quizData[currentQuestionIndex];
-
-    questionElement.textContent = currentQuestion.question;
-    answerButtonsElement.innerHTML = "";
-
-    currentQuestion.answers.forEach((answer) => {
-      const button = document.createElement("button");
-      button.innerText = answer;
-      button.classList.add("answer-btn");
-      button.addEventListener("click", () => handleAnswerClick(answer));
-      answerButtonsElement.appendChild(button);
-    });
-  }
-}
-
-function handleAnswerClick(selectedAnswer) {
-  const currentQuestion = quizData[currentQuestionIndex];
-  if (selectedAnswer === currentQuestion.correctAnswer) {
-    console.log("Correct!");
-  } else {
-    console.log("Wrong!");
-  }
-  currentQuestionIndex++;
-  if (currentQuestionIndex < quizData.length) {
-    displayQuestion();
-  } else {
-    console.log("Quiz ended");
-  }
+  currentQuestionIndex = 0;
+  displayQuestion();
 }
 
 // Add click event listeners to the category buttons

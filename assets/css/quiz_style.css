@@ -112,6 +112,8 @@ body {
 }
 
 .category-btn {
+  position: relative;
+  left: 2.1rem;
   font-family: "just me again down here", cursive;
   font-size: 1.5rem !important;
   transition: all 0.3s ease;
