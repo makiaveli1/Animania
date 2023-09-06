@@ -1,7 +1,11 @@
 import { animeQuestions, mangaQuestions } from "../js/questions.js";
 
+let questionLimit = 20;
+let timer;
+let timerCounter = 10;
 let quizData = [];
 let currentQuestionIndex = 0;
+let currentQuestionNumber = 1;
 
 // Function to toggle visibility of elements
 function toggleVisibility(elementId, className = "hidden") {
@@ -9,14 +13,14 @@ function toggleVisibility(elementId, className = "hidden") {
   element.classList.toggle(className);
 }
 
-function displayError(message) {
-  console.log("Trying to display error: " + message); // Debugging line
-  const errorBox = document.getElementById("error-message");
-  errorBox.textContent = message;
-  errorBox.style.display = "block";
-  setTimeout(() => {
-    errorBox.style.display = "none";
-  }, 3000); // Hide after 3 seconds
+function fetchData(category) {
+  if (category === "anime") {
+    quizData = animeQuestions;
+  } else if (category === "manga") {
+    quizData = mangaQuestions;
+  }
+  currentQuestionIndex = 0;
+  displayQuestion();
 }
 
 // Function to handle category button clicks
@@ -28,15 +32,13 @@ function handleCategoryClick(category) {
   categorySection.style.opacity = "0";
   quizSection.style.opacity = "0";
   quizSection.style.display = "flex";
-
-  // Fetch data for the selected category
-  fetchData(category);
-
+  
   // Randomize questions and their answers
   randomizeQuizData();
 
   // Fetch data for the selected category
   fetchData(category);
+
 
   // Hide category section after transition
   setTimeout(() => {
@@ -53,6 +55,10 @@ function displayQuestion() {
   questionElement.textContent = currentQuestion.question;
   answerButtonsElement.innerHTML = "";
 
+  document.getElementById(
+    "question-counter"
+  ).textContent = `Question ${currentQuestionNumber} of 20`;
+
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerText = answer;
@@ -67,11 +73,23 @@ function displayQuestion() {
     );
     answerButtonsElement.appendChild(button);
   });
+  // Start the timer
+  timerCounter = 10; // Reset the timer counter
+  document.getElementById("timer-counter").textContent = timerCounter;
+  timer = setInterval(() => {
+    timerCounter--;
+    document.getElementById("timer-counter").textContent = timerCounter;
+    if (timerCounter <= 0) {
+      clearInterval(timer);
+      // Move to next question or show result if timer reaches 0
+      handleAnswerClick(null, null, null); // Passing nulls because no button was actually clicked.
+    }
+  }, 1000);
 }
 
 function handleAnswerClick(selectedAnswer, checkmarkSpan, event) {
+  clearInterval(timer); // Stop the existing timer
   const currentQuestion = quizData[currentQuestionIndex];
-  const clickedButton = event.target.closest(".answer-btn"); // Make sure to get the button element
   const allAnswerButtons = document.querySelectorAll(".answer-btn");
 
   let correctButton;
@@ -81,25 +99,36 @@ function handleAnswerClick(selectedAnswer, checkmarkSpan, event) {
     }
   });
 
-  if (selectedAnswer === currentQuestion.correctAnswer) {
-    console.log("Correct!");
-    clickedButton.classList.add("correct"); // Turn the button green
-    // No need to show checkmark
+  if (selectedAnswer === null) {
+    console.log("Time's up!");
+    // Optionally, you can add logic here to mark it as a wrong answer or just skip to next question
   } else {
-    console.log("Wrong!");
-    clickedButton.classList.add("wrong"); // Turn the button red
-    correctButton.querySelector(".checkmark").style.display = "inline"; // Show the checkmark next to the correct answer
+    if (selectedAnswer === currentQuestion.correctAnswer) {
+      console.log("Correct!");
+      event.target.closest(".answer-btn").classList.add("correct");
+    } else {
+      console.log("Wrong!");
+      event.target.closest(".answer-btn").classList.add("wrong");
+      if (correctButton) {
+        correctButton.querySelector(".checkmark").style.display = "inline";
+      }
+    }
   }
 
   currentQuestionIndex++;
-  if (currentQuestionIndex < quizData.length) {
+  currentQuestionNumber++;
+
+  if (
+    currentQuestionIndex < quizData.length &&
+    currentQuestionIndex < questionLimit
+  ) {
     setTimeout(() => {
       allAnswerButtons.forEach((button) => {
         button.classList.remove("correct", "wrong");
-        button.querySelector(".checkmark").style.display = "none"; // Hide checkmark
+        button.querySelector(".checkmark").style.display = "none";
       });
       displayQuestion();
-    }, 2000); // Delay to show feedback
+    }, 2000);
   } else {
     console.log("Quiz ended");
   }
@@ -122,16 +151,6 @@ function randomizeQuizData() {
   quizData.forEach((questionObj) => {
     shuffleArray(questionObj.answers);
   });
-}
-
-function fetchData(category) {
-  if (category === "anime") {
-    quizData = animeQuestions;
-  } else if (category === "manga") {
-    quizData = mangaQuestions;
-  }
-  currentQuestionIndex = 0;
-  displayQuestion();
 }
 
 // Add click event listeners to the category buttons
