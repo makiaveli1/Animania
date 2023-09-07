@@ -1,17 +1,12 @@
 import { animeQuestions, mangaQuestions } from "../js/questions.js";
 
-let questionLimit = 20;
+let questionLimit = 5;
+let userScore = 0;
 let timer;
 let timerCounter = 10;
 let quizData = [];
 let currentQuestionIndex = 0;
 let currentQuestionNumber = 1;
-
-// Function to toggle visibility of elements
-function toggleVisibility(elementId, className = "hidden") {
-  const element = document.getElementById(elementId);
-  element.classList.toggle(className);
-}
 
 function fetchData(category) {
   if (category === "anime") {
@@ -19,8 +14,11 @@ function fetchData(category) {
   } else if (category === "manga") {
     quizData = mangaQuestions;
   }
+  randomizeQuizData();
+
   currentQuestionIndex = 0;
   displayQuestion();
+  console.log(quizData);
 }
 
 // Function to handle category button clicks
@@ -28,17 +26,14 @@ function handleCategoryClick(category) {
   const categorySection = document.getElementById("category-section");
   const quizSection = document.getElementById("quiz-section");
 
-  // Initial setup for smooth transition
-  categorySection.style.opacity = "0";
-  quizSection.style.opacity = "0";
-  quizSection.style.display = "flex";
-  
-  // Randomize questions and their answers
-  randomizeQuizData();
-
   // Fetch data for the selected category
   fetchData(category);
 
+  // Initial setup for smooth transition
+  categorySection.style.opacity = "0";
+  quizSection.style.opacity = "0";
+
+  quizSection.classList.add("active");
 
   // Hide category section after transition
   setTimeout(() => {
@@ -57,7 +52,7 @@ function displayQuestion() {
 
   document.getElementById(
     "question-counter"
-  ).textContent = `Question ${currentQuestionNumber} of 20`;
+  ).textContent = `Question ${currentQuestionNumber} of 5`;
 
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
@@ -69,26 +64,26 @@ function displayQuestion() {
     checkmarkSpan.style.display = "none"; // Initially hidden
     button.appendChild(checkmarkSpan);
     button.addEventListener("click", (event) =>
-      handleAnswerClick(answer, checkmarkSpan, event)
+      handleAnswerClick(answer, event)
     );
     answerButtonsElement.appendChild(button);
   });
   // Start the timer
-  timerCounter = 10; // Reset the timer counter
+  timerCounter = 10;
   document.getElementById("timer-counter").textContent = timerCounter;
   timer = setInterval(() => {
     timerCounter--;
     document.getElementById("timer-counter").textContent = timerCounter;
     if (timerCounter <= 0) {
       clearInterval(timer);
-      // Move to next question or show result if timer reaches 0
-      handleAnswerClick(null, null, null); // Passing nulls because no button was actually clicked.
+      handleAnswerClick(null, null, null);
     }
   }, 1000);
 }
 
-function handleAnswerClick(selectedAnswer, checkmarkSpan, event) {
-  clearInterval(timer); // Stop the existing timer
+// Function to handle answer clicks
+function handleAnswerClick(selectedAnswer, event) {
+  clearInterval(timer);
   const currentQuestion = quizData[currentQuestionIndex];
   const allAnswerButtons = document.querySelectorAll(".answer-btn");
 
@@ -101,11 +96,11 @@ function handleAnswerClick(selectedAnswer, checkmarkSpan, event) {
 
   if (selectedAnswer === null) {
     console.log("Time's up!");
-    // Optionally, you can add logic here to mark it as a wrong answer or just skip to next question
   } else {
     if (selectedAnswer === currentQuestion.correctAnswer) {
       console.log("Correct!");
       event.target.closest(".answer-btn").classList.add("correct");
+      userScore++;
     } else {
       console.log("Wrong!");
       event.target.closest(".answer-btn").classList.add("wrong");
@@ -131,32 +126,55 @@ function handleAnswerClick(selectedAnswer, checkmarkSpan, event) {
     }, 2000);
   } else {
     console.log("Quiz ended");
+    document.getElementById(
+      "quiz-score"
+    ).textContent = `Your score: ${userScore}`;
+    document.getElementById("quiz-section").classList.add("hidden"); // Hide the quiz section
+    document.getElementById("quiz-summary").classList.remove("hidden"); // Show the quiz summary
   }
 }
 
-// Function to shuffle an array (Fisher-Yates Shuffle)
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+// Function to shuffle array
+function selectRandomArrayIndex(arr) {
+  return Math.floor(Math.random() * arr.length);
+}
+function shuffleArray(arrOfNumbers) {
+  const arr = [...arrOfNumbers];
+  const newArr = [];
+  let newValue;
+  let randomIndex;
+  for (let index = 0; index < arrOfNumbers.length; index++) {
+    randomIndex = selectRandomArrayIndex(arr);
+    newValue = arr[randomIndex];
+    arr.splice(randomIndex, 1);
+    newArr.push(newValue);
   }
+  return newArr;
 }
 
 // Function to randomize questions and their answers
 function randomizeQuizData() {
-  // Randomize questions
-  shuffleArray(quizData);
+  console.log("Before shuffle: ", quizData);
+  quizData = shuffleArray(quizData);
+  console.log("After shuffle: ", quizData);
+  quizData.forEach((questionObj, index) => {
+    console.log(
+      `Question ${index + 1} answers before shuffle: `,
+      questionObj.answers
+    );
 
-  // Randomize answers for each question
-  quizData.forEach((questionObj) => {
-    shuffleArray(questionObj.answers);
+    questionObj.answers = shuffleArray(questionObj.answers);
+    console.log(
+      `Question ${index + 1} answers after shuffle: `,
+      questionObj.answers
+    );
   });
 }
 
 // Add click event listeners to the category buttons
 document.querySelectorAll(".category-btn").forEach((button) => {
   button.addEventListener("click", () => {
-    console.log("Category button clicked"); // Debugging line
+    console.log("Category button clicked");
     const category = button.getAttribute("data-category");
     handleCategoryClick(category);
   });

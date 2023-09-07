@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Nanum+Pen+Script&family=Pangolin&family=Rock+Salt&family=Share+Tech+Mono&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Nanum+Pen+Script&family=Pangolin&family=Rock+Salt&family=Share+Tech+Mono&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&display=swap");
 
 /* Asterisk wildcard selector */
 * {
@@ -180,17 +180,21 @@ body {
   top: 10rem;
 }
 
-#answer-buttons {
-  padding-top: 2rem;
+#quiz-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: r2em;
+}
+
+#answer-buttons #restart-quiz {
+  padding-top: 2px;
 }
 
 .hidden {
   display: none;
 }
 
-.inactive {
-  visibility: hidden;
-  position: absolute;
+.active {
+  display: flex;
 }
 
 .correct {
@@ -202,7 +206,8 @@ body {
 }
 
 .answer-btn {
-  left: 4.5rem;
+  /* display: flex; */
+  left: 2rem;
   font-family: "Pangolin", sans-serif;
   font-size: 1rem !important;
   transition: all 0.3s ease;
@@ -210,15 +215,16 @@ body {
   color: rgb(19, 18, 18);
   border: 0.3rem solid black;
   border-radius: 0.5rem;
-  padding: 1rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  margin: 0.3rem;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 0.2rem;
   cursor: pointer;
-  font-size: calc(1rem + 1vw);
   white-space: nowrap;
   position: relative;
   z-index: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .answer-btn:active {
@@ -242,7 +248,7 @@ body {
 }
 
 #category-section,
-#quiz-section {
+#quiz-section #quiz-summary {
   transition: opacity 0.5s ease;
 }
 
@@ -265,8 +271,53 @@ body {
   display: none; /* Initially hidden */
 }
 
+#quiz-summary {
+  position: relative;
+  top: 11rem;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(135, 79, 54, 0.81),
+    rgba(179, 173, 166, 0.81),
+    rgba(176, 138, 77, 0.56)
+  );
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: #000000 0px 0px 10px 0px;
+  border: 0.2rem solid black;
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+
+#quiz-summary h2 {
+  font-size: 1.3rem;
+  margin-bottom: r2em;
+}
+
+#restart-quiz {
+  font-family: "Pangolin", sans-serif;
+  font-size: 1rem !important;
+  transition: all 0.3s ease;
+  background-color: #ffbb00;
+  box-shadow: #000000 0px 0px 10px 0px;
+  color: rgb(19, 18, 18);
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
 /* Footer Section */
 #footer-section {
+  position: relative;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: #000000 0px 0px 10px 0px;
   font-size: 1rem;
@@ -274,7 +325,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20rem;
+  top: 22.5rem;
   padding: 1rem;
 }
 
