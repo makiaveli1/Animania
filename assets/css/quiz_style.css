@@ -195,6 +195,8 @@ body {
 
 .active {
   display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .correct {
@@ -252,28 +254,9 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.active {
-  opacity: 1;
-  display: flex;
-  pointer-events: auto;
-}
-
-.inactive {
-  opacity: 0;
-  display: none;
-  pointer-events: none;
-}
-
-.error-message {
-  color: red;
-  font-size: 1.2em;
-  margin-top: 10px;
-  display: none; /* Initially hidden */
-}
-
 #quiz-summary {
   position: relative;
-  top: 11rem;
+  top: 20rem;
   bottom: 0;
   background: linear-gradient(
     to right,
@@ -295,7 +278,7 @@ body {
   margin-bottom: r2em;
 }
 
-#restart-quiz {
+#restart-quiz, #home-button {
   font-family: "Pangolin", sans-serif;
   font-size: 1rem !important;
   transition: all 0.3s ease;
@@ -320,13 +303,14 @@ body {
   position: relative;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: #000000 0px 0px 10px 0px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #fcfcfc;
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 22.5rem;
+  margin-top: 6rem;
   padding: 1rem;
+  top: 28rem;
 }
 
 /* Anime-Inspired Animation Sequence */

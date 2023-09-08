@@ -113,7 +113,7 @@ function handleAnswerClick(selectedAnswer, event) {
   currentQuestionIndex++;
   currentQuestionNumber++;
 
-  if (
+    if (
     currentQuestionIndex < quizData.length &&
     currentQuestionIndex < questionLimit
   ) {
@@ -126,11 +126,14 @@ function handleAnswerClick(selectedAnswer, event) {
     }, 2000);
   } else {
     console.log("Quiz ended");
-    document.getElementById(
-      "quiz-score"
-    ).textContent = `Your score: ${userScore}`;
-    document.getElementById("quiz-section").classList.add("hidden"); // Hide the quiz section
-    document.getElementById("quiz-summary").classList.remove("hidden"); // Show the quiz summary
+    document.getElementById("quiz-score").textContent = ` ${userScore}`;
+    const quizSection = document.getElementById("quiz-section");
+    setTimeout(() => {
+      quizSection.classList.add("hidden");  // Hide the quiz section
+      quizSection.classList.remove("active");  // Remove active class
+    }, 100);
+    document.getElementById("quiz-summary").classList.remove("hidden");  // Show the quiz summary
+    console.log(quizSection.classList);
   }
 }
 
@@ -178,4 +181,26 @@ document.querySelectorAll(".category-btn").forEach((button) => {
     const category = button.getAttribute("data-category");
     handleCategoryClick(category);
   });
+});
+
+// Select the "Play Again" button
+const restartButton = document.getElementById("restart-quiz");
+
+// Attach an event listener to the "Play Again" button
+restartButton.addEventListener("click", () => {
+  // Reset quiz variables
+  currentQuestionIndex = 0;
+  currentQuestionNumber = 1;
+  userScore = 0;
+
+  // Hide the summary section
+  document.getElementById("quiz-summary").classList.add("hidden");
+
+  // Show the quiz section
+  const quizSection = document.getElementById("quiz-section");
+  quizSection.classList.remove("hidden");
+  quizSection.classList.add("active");
+
+  // Display the first question
+  displayQuestion();
 });
