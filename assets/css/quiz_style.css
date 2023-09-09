@@ -241,6 +241,8 @@ body {
   opacity: 0.5;
 }
 
+/* Quiz Summary Section */
+
 #quiz-summary {
   position: relative;
   flex-direction: column;
@@ -451,11 +453,6 @@ label {
   }
 }
 
-/* Fade-in effect */
-.fade-in {
-  animation: fadeIn ease 1s;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -511,5 +508,14 @@ label {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Media query for center alignment in category section on desktop */
+@media screen and (min-width: 1024px) {
+  #category-section,
+  #category-section h2,
+  .category-btn {
+    text-align: center !important;
   }
 }

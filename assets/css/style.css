@@ -7,8 +7,9 @@
   box-sizing: border-box;
 }
 
+/*Body styles*/
 body {
-  font-family: "Just Me Again Down Here", cursive;
+  font-family: "just me again down here", cursive;
   background-color: #c4c4c4;
   width: 100%;
   height: 100%;
@@ -33,7 +34,7 @@ body {
 #main-header span {
   font-size: 1.5rem;
   text-shadow: #0000 0px 0px 10px;
-  border: #0000 0.3rem solid;
+  border: #000000 0.3rem solid;
   box-shadow: #3d3b3b 0px 0px 10px 5px;
   animation: boxFlicker 3s infinite alternate;
 }
@@ -80,6 +81,7 @@ body {
   top: 50%;
 }
 
+/* Intro Section */
 #intro-section {
   position: relative;
   background-color: rgba(0, 0, 0, 0.7);
@@ -99,9 +101,10 @@ body {
 }
 
 #intro-section p {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
+/* Action Section */
 #action-section {
   position: relative;
   display: flex;
@@ -123,8 +126,8 @@ body {
 
 #initiate-quiz,
 #game-rules {
-  font-family: "just me again down here", cursive;
-  font-size: 1.5rem !important;
+  font-family: "pangolin", sans-serif;
+  font-size: 1.2rem !important;
   transition: all 0.3s ease;
   background-image: linear-gradient(
     to bottom,
@@ -180,6 +183,7 @@ body {
   opacity: 0.5;
 }
 
+/* instructions */
 #instruction-popup {
   display: none; /* Initially hidden */
   position: absolute;
@@ -212,24 +216,11 @@ body {
   z-index: 2;
 }
 
-#instruction-popup ol {
+#instruction-popup ul {
+  list-style-type: none;
   padding-left: 1rem;
   margin-top: 1rem;
   font-size: 1.4rem;
-}
-
-/* Add scrollbar styling for Webkit browsers like Chrome, Safari */
-#instruction-popup::-webkit-scrollbar {
-  width: 10px;
-}
-
-#instruction-popup::-webkit-scrollbar-thumb {
-  background: #b4912ffa;
-  border-radius: 10px;
-}
-
-#instruction-popup::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 #close-popup {
@@ -258,6 +249,20 @@ body {
   top: -7rem;
   text-shadow: #ffbb00 0px 0px 10px;
   z-index: 2;
+}
+
+/* Add scrollbar styling for Webkit browsers like Chrome, Safari */
+#instruction-popup::-webkit-scrollbar {
+  width: 10px;
+}
+
+#instruction-popup::-webkit-scrollbar-thumb {
+  background: #b4912ffa;
+  border-radius: 10px;
+}
+
+#instruction-popup::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 #footer-section {
@@ -380,5 +385,16 @@ body {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+/* Media query for center alignment in instruction-popup on desktop */
+@media screen and (min-width: 1024px) {
+  #instruction-popup,
+  #instruction-popup h2,
+  #instruction-popup h3,
+  #instruction-popup ol,
+  #instruction-popup p {
+    text-align: center !important;
   }
 }

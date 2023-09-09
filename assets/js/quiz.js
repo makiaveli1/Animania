@@ -1,7 +1,6 @@
-document.getElementById("quiz-summary").style.display = "none";
-
 import { animeQuestions, mangaQuestions } from "../js/questions.js";
 
+document.getElementById("quiz-summary").style.display = "none";
 class Quiz {
   constructor() {
     this.questionLimit = 15;
@@ -17,7 +16,6 @@ class Quiz {
     this.usernameInput = document.getElementById("username");
     this.saveScoreButton = document.getElementById("save-score-btn");
     this.leaderboardList = document.getElementById("leaderboard-list");
-    console.log("Quiz class initialized.");
 
     // Attach event listeners
     this.restartQuizButton.addEventListener("click", () => this.restartQuiz());
@@ -59,7 +57,6 @@ class Quiz {
 
   fetchData(category) {
     try {
-      console.log(`Fetching data for category: ${category}`);
       if (category === "anime") {
         this.quizData = animeQuestions;
       } else if (category === "manga") {
@@ -74,14 +71,12 @@ class Quiz {
   }
 
   handleCategoryClick(category) {
-    console.log(`Handling click for category: ${category}`);
     this.smoothTransition("category-section", "quiz-section");
     this.fetchData(category);
   }
 
   displayQuestion() {
     try {
-      console.log("Displaying question.");
       const questionElement = document.getElementById("quiz-question");
       const answerButtonsElement = document.getElementById("answer-buttons");
       const currentQuestion = this.quizData[this.currentQuestionIndex];
@@ -109,7 +104,6 @@ class Quiz {
 
   startTimer() {
     try {
-      console.log("Starting timer.");
       this.timerCounter = 10;
       document.getElementById("timer-counter").textContent = this.timerCounter;
       this.timer = setInterval(() => {
@@ -128,7 +122,6 @@ class Quiz {
 
   handleAnswerClick(selectedAnswer) {
     try {
-      console.log("Handling answer click.");
       clearInterval(this.timer);
       const currentQuestion = this.quizData[this.currentQuestionIndex];
       let answerButtonsElement = document.getElementById("answer-buttons");
@@ -150,19 +143,13 @@ class Quiz {
       );
 
       if (selectedAnswer === currentQuestion.correctAnswer) {
-        console.log("Correct answer selected.");
         this.userScore++;
         if (clickedButton) {
-          console.log("Before:", clickedButton.classList);
           clickedButton.classList.add("correct");
-          console.log("After:", clickedButton.classList);
         }
       } else {
-        console.log("Incorrect answer selected.");
         if (clickedButton) {
-          console.log("Before:", clickedButton.classList);
           clickedButton.classList.add("wrong");
-          console.log("After:", clickedButton.classList);
         }
         if (correctButton) {
           // Show a checkmark next to the correct answer
@@ -195,7 +182,6 @@ class Quiz {
         if (this.currentQuestionIndex < this.questionLimit) {
           this.displayQuestion();
         } else {
-          console.log("Quiz ended");
           document.getElementById(
             "quiz-score"
           ).textContent = ` ${this.userScore}`;
@@ -209,7 +195,6 @@ class Quiz {
 
   randomizeQuizData() {
     try {
-      console.log("Randomizing quiz data.");
       // Shuffle the questions first
       this.quizData = this.shuffleArray(this.quizData);
 
@@ -224,7 +209,6 @@ class Quiz {
 
   shuffleArray(arr) {
     try {
-      console.log("Shuffling array.");
       let newArr = [...arr];
       for (let i = newArr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -238,7 +222,6 @@ class Quiz {
 
   smoothTransition(fromSection, toSection) {
     try {
-      console.log(`Transitioning from ${fromSection} to ${toSection}.`);
       document.getElementById(fromSection).classList.add("fade-out");
 
       setTimeout(() => {
