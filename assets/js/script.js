@@ -31,3 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close the popup when the close button is clicked
   closePopupBtn.addEventListener("click", hidePopup);
 });
+
+document.querySelector("#navigate-to-quiz").addEventListener("click", function (event) {
+  event.preventDefault();
+  document.body.classList.add("fade-out");
+  setTimeout(() => {
+    window.location.href = "quiz.html";
+  }, 1000);
+});

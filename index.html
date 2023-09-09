@@ -9,6 +9,7 @@
     />
     <title>Welcome to Animania!</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="prefetch" href="quiz.html">
   </head>
   <body>
     <header id="main-header">
@@ -20,12 +21,12 @@
         />
         <span>ANIMANIA</span>
       </a>
-    </header>    
+    </header>
 
-    <div id="goku-bg" class="anime-bg"></div>
-    <div id="naruto-bg" class="anime-bg"></div>
-    <div id="saitama-bg" class="anime-bg"></div>
-    <div id="luffy-bg" class="anime-bg"></div>
+    <div id="goku-bg" class="anime-bg svg-container"></div>
+    <div id="naruto-bg" class="anime-bg svg-container"></div>
+    <div id="saitama-bg" class="anime-bg svg-container"></div>
+    <div id="luffy-bg" class="anime-bg svg-container"></div>
 
     <main id="main-content">
       <section id="intro-section">
@@ -38,21 +39,22 @@
         <section id="action-section">
           <div id="button-wrapper">
             <button id="initiate-quiz">Instructions</button>
-            <button id="game-rules" onclick="window.location.href='quiz.html'">Dive-in</button>
+            <button id="game-rules" onclick="window.location.href='quiz.html'">
+              Dive-in
+            </button>
           </div>
         </section>
       </div>
 
-        <div
-          id="instruction-popup"
-          class="hidden"
-          role="dialog"
-          aria-labelledby="popup-title"
-        >
-          <span id="close-popup">×</span>
-          <h2 id="popup-title">How to Play Animania</h2>
-          <p>Your guide to mastering this quiz.</p>
-        </div>
+      <div
+        id="instruction-popup"
+        class="hidden"
+        role="dialog"
+        aria-labelledby="popup-title"
+      >
+        <span id="close-popup">×</span>
+        <h2 id="popup-title">How to Play Animania</h2>
+        <p>Your guide to mastering this quiz.</p>
       </div>
     </main>
     <footer id="footer-section">

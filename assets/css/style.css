@@ -51,6 +51,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
+  animation: floatEffect 4s infinite ease-in-out;
 }
 
 #goku-bg {
@@ -350,5 +351,17 @@ body {
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

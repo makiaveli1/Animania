@@ -58,6 +58,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
+  animation: floatEffect 4s infinite ease-in-out;
 }
 
 #goku-bg {
@@ -240,7 +241,6 @@ body {
   opacity: 0.5;
 }
 
-
 #quiz-summary {
   position: relative;
   flex-direction: column;
@@ -333,11 +333,10 @@ label {
 }
 
 /* Maintain color scheme */
-#save-score-btn{
-  background-color: #ffbb00;  /* Same as your answer buttons */
-  color: rgb(19, 18, 18);  /* Same as your text color */
+#save-score-btn {
+  background-color: #ffbb00; /* Same as your answer buttons */
+  color: rgb(19, 18, 18); /* Same as your text color */
 }
-
 
 /* Footer Section */
 #footer-section {
@@ -467,8 +466,13 @@ label {
 }
 
 /* Fade-out effect */
+
 .fade-out {
-  animation: fadeOut ease 1s;
+  animation: fadeOut 1s ease forwards;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
 }
 
 @keyframes fadeOut {
@@ -477,5 +481,35 @@ label {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
