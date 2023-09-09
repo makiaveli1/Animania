@@ -9,7 +9,7 @@
 
 /*Body styles*/
 body {
-  font-family: "just me again down here", cursive;
+  font-family: "Just Me Again Down Here", cursive;
   background-color: #c4c4c4;
   width: 100%;
   height: 100%;
@@ -101,7 +101,7 @@ body {
 }
 
 #intro-section p {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Action Section */
@@ -189,6 +189,8 @@ body {
   position: absolute;
   top: 10rem;
   left: 0;
+  font-family: "pangolin", sans-serif;
+  font-size: 1.2rem !important;
   flex-direction: column;
   background-color: #fec833fa;
   box-shadow: #000000 0px 0px 10px 0px;
@@ -212,7 +214,6 @@ body {
 }
 
 #instruction-popup p {
-  font-size: 1.5rem;
   z-index: 2;
 }
 
