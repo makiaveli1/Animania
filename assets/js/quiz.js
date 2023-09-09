@@ -13,6 +13,7 @@ class Quiz {
     this.currentQuestionNumber = 1;
     this.restartQuizButton = document.getElementById("restart-quiz");
     this.homeButton = document.getElementById("home-button");
+    this.quitButton = document.getElementById("quit-button");
     this.usernameInput = document.getElementById("username");
     this.saveScoreButton = document.getElementById("save-score-btn");
     this.leaderboardList = document.getElementById("leaderboard-list");
@@ -20,6 +21,7 @@ class Quiz {
 
     // Attach event listeners
     this.restartQuizButton.addEventListener("click", () => this.restartQuiz());
+    this.quitButton.addEventListener("click", () => this.quitQuiz());
     this.homeButton.addEventListener("click", () => this.goToHome());
     this.saveScoreButton.addEventListener("click", () =>
       this.saveUsernameAndScore()
@@ -284,6 +286,17 @@ class Quiz {
       listItem.textContent = `${index + 1}. ${entry.username} - ${entry.score}`;
       this.leaderboardList.appendChild(listItem);
     });
+  }
+
+  // Then, add this new method to your Quiz class
+  quitQuiz() {
+    // Reset all quiz states
+    this.userScore = 0;
+    this.currentQuestionIndex = 0;
+    this.currentQuestionNumber = 1;
+
+    // Transition back to the category section
+    this.smoothTransition("quiz-section", "category-section");
   }
 }
 
