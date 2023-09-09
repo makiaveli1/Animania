@@ -38,7 +38,7 @@ body {
 
 #main-header span {
   font-size: 1.5rem;
-  text-shadow: #000000 0px 0px 10px 0px;
+  text-shadow: #000000 0px 0px 10px;
   border: #000000 0.3rem solid;
   box-shadow: #3d3b3b 0px 0px 10px 5px;
   animation: boxFlicker 3s infinite alternate;
@@ -188,7 +188,7 @@ body {
 
 #quiz-section h2 {
   font-size: 1.3rem;
-  margin-bottom: r2em;
+  margin-bottom: 2rem;
 }
 
 #answer-buttons #restart-quiz {

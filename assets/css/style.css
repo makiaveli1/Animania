@@ -32,8 +32,8 @@ body {
 
 #main-header span {
   font-size: 1.5rem;
-  text-shadow: #000000 0px 0px 10px 0px;
-  border: #000000 0.3rem solid;
+  text-shadow: #0000 0px 0px 10px;
+  border: #0000 0.3rem solid;
   box-shadow: #3d3b3b 0px 0px 10px 5px;
   animation: boxFlicker 3s infinite alternate;
 }
@@ -256,7 +256,7 @@ body {
   white-space: nowrap;
   align-content: center;
   top: -7rem;
-  text-shadow: #ffbb00 0px 0px 10px 0px;
+  text-shadow: #ffbb00 0px 0px 10px;
   z-index: 2;
 }
 
