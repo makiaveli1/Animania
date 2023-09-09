@@ -24,6 +24,8 @@ class Quiz {
     this.saveScoreButton.addEventListener("click", () =>
       this.saveUsernameAndScore()
     );
+    this.loadLeaderboard();
+    this.displayLeaderboard();
 
     // Load leaderboard initially
     this.loadLeaderboard();
