@@ -4,7 +4,7 @@ import { animeQuestions, mangaQuestions } from "../js/questions.js";
 
 class Quiz {
   constructor() {
-    this.questionLimit = 5;
+    this.questionLimit = 15;
     this.userScore = 0;
     this.timer = null;
     this.timerCounter = 10;
@@ -13,14 +13,21 @@ class Quiz {
     this.currentQuestionNumber = 1;
     this.restartQuizButton = document.getElementById("restart-quiz");
     this.homeButton = document.getElementById("home-button");
+    this.usernameInput = document.getElementById("username");
+    this.saveScoreButton = document.getElementById("save-score-btn");
+    this.leaderboardList = document.getElementById("leaderboard-list");
     console.log("Quiz class initialized.");
 
     // Attach event listeners
     this.restartQuizButton.addEventListener("click", () => this.restartQuiz());
     this.homeButton.addEventListener("click", () => this.goToHome());
-  }
+    this.saveScoreButton.addEventListener("click", () =>
+      this.saveUsernameAndScore()
+    );
 
-  // ... existing methods ...
+    // Load leaderboard initially
+    this.loadLeaderboard();
+  }
 
   restartQuiz() {
     // Reset all quiz states
@@ -80,7 +87,7 @@ class Quiz {
 
       document.getElementById(
         "question-counter"
-      ).textContent = `Question ${this.currentQuestionNumber} of 5`;
+      ).textContent = `Question ${this.currentQuestionNumber} of 15`;
 
       currentQuestion.answers.forEach((answer) => {
         const button = document.createElement("button");
@@ -122,7 +129,6 @@ class Quiz {
       const currentQuestion = this.quizData[this.currentQuestionIndex];
       let answerButtonsElement = document.getElementById("answer-buttons");
 
-      // Remove existing classes from previous questions
       answerButtonsElement
         .querySelectorAll(".correct, .wrong")
         .forEach((btn) => {
@@ -191,7 +197,7 @@ class Quiz {
           ).textContent = ` ${this.userScore}`;
           this.smoothTransition("quiz-section", "quiz-summary");
         }
-      }, 2000); // 2-second delay
+      }, 2000);
     } catch (error) {
       console.error("Error handling answer click:", error);
     }
@@ -203,7 +209,7 @@ class Quiz {
       // Shuffle the questions first
       this.quizData = this.shuffleArray(this.quizData);
 
-      // Now shuffle the answers for each question
+      // Then shuffle the answers for each question
       this.quizData.forEach((questionObj) => {
         questionObj.answers = this.shuffleArray(questionObj.answers);
       });
@@ -245,6 +251,37 @@ class Quiz {
     } catch (error) {
       console.error("Error during transition:", error);
     }
+  }
+
+  saveUsernameAndScore() {
+    const username = this.usernameInput.value;
+    const score = this.userScore;
+
+    // Save to local storage
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+    leaderboard.push({ username, score });
+    localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
+    // Update and display the leaderboard
+    this.loadLeaderboard();
+    this.displayLeaderboard();
+  }
+
+  loadLeaderboard() {
+    this.leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+  }
+
+  displayLeaderboard() {
+    // Sort leaderboard
+    this.leaderboard.sort((a, b) => b.score - a.score);
+
+    // Update the DOM
+    this.leaderboardList.innerHTML = "";
+    this.leaderboard.forEach((entry, index) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${index + 1}. ${entry.username} - ${entry.score}`;
+      this.leaderboardList.appendChild(listItem);
+    });
   }
 }
 

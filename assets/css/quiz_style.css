@@ -244,7 +244,7 @@ body {
 #quiz-summary {
   position: relative;
   flex-direction: column;
-  margin-top: 21rem;
+  margin-top: 15rem;
   background: linear-gradient(
     to right,
     rgba(135, 79, 54, 0.81),
@@ -285,6 +285,59 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* Username Input Section */
+#username-input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#username {
+  font-family: "Pangolin", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+}
+
+label {
+  font-family: "Pangolin", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#save-score-btn {
+  font-family: "Pangolin", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 10px;
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Leaderboard Section */
+#leaderboard-section {
+  margin-top: 30px;
+  text-align: center;
+  color: #000;
+}
+
+#leaderboard-list {
+  font-family: "Pangolin", sans-serif;
+  font-size: 1.2rem;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Maintain color scheme */
+#save-score-btn{
+  background-color: #ffbb00;  /* Same as your answer buttons */
+  color: rgb(19, 18, 18);  /* Same as your text color */
+}
+
 
 /* Footer Section */
 #footer-section {
