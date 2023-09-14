@@ -5,9 +5,10 @@
 
 View [live site here](https://makiaveli1.github.io/Animania/)
 
-![Responsiveness](assets\images\ReadmeDocs\responsive.png)
+![Responsiveness](assets/images/ReadmeDocs/responsive.png)
 
 ## Table of Contents
+
 1. [Description](#description)
 2. [UX Design](#ux-design)
 3. [Features](#features)
@@ -49,19 +50,22 @@ The design is inspired by vibrant anime aesthetics, with the use of lively color
 
 The project employs a carefully selected color scheme to enhance user engagement and aesthetic appeal. Below is the breakdown:
 
-#### Background Colors:
+#### Background Colors
+
 - Light Gray: `#c4c4c4`
 - Yellow: `#ffbb00`
 - Dark Yellow: `#fec833`
 - Black with opacity: `rgba(0, 0, 0, 0.7)`
 - Gradient: `linear-gradient(to right, rgba(135, 79, 54, 0.81), rgba(179, 173, 166, 0.81), rgba(176, 138, 77, 0.56))`
 
-#### Text Colors:
+#### Text Colors
+
 - White: `#fff` and `#fcfcfc`
 - Black: `#000`
 - Dark Gray: `rgb(19, 18, 18)`
 
-#### Special Cases:
+#### Special Cases
+
 - Correct Answers: `green`
 - Wrong Answers: `red`
 
@@ -73,15 +77,17 @@ Images were generated through Leonardo.ai and then vectorized using Vectorizer.a
 
 Wireframes serve as the blueprint for the design and layout of the application. They offer a visual guide that represents the skeletal framework of the application. Below are the wireframes for different parts of the Animania project:
 
-#### Mobile Look:
-![Mobile Wireframe](assets\images\ReadmeDocs\mobile.png)
+#### Mobile Look
 
-#### Tablet Look:
-![Tablet Wireframe](assets\images\ReadmeDocs\tablet.png)
+![Mobile Wireframe](assets/images/ReadmeDocs/mobile.png)
 
-#### Desktop Look:
-![Desktop Wireframe](assets\images\ReadmeDocs\Desktop.png)
+#### Tablet Look
 
+![Tablet Wireframe](assets/images/ReadmeDocs/tablet.png)
+
+#### Desktop Look
+
+![Desktop Wireframe](assets/images/ReadmeDocs/Desktop.png)
 
 These wireframes were designed to provide a seamless user experience while maintaining a clean and attractive interface.
 
@@ -104,7 +110,6 @@ The game incorporates a timer for each question, pushing players to think on the
 
 The project uses pure HTML, CSS, and JavaScript with no additional libraries. Google Fonts were used for typography, and images were generated and converted using Leonardo.ai and Vectorizer.ai, respectively. All code has undergone extensive testing, including Lighthouse, HTML, CSS, and JS validation.
 
-
 ## Testing
 
 Testing is a crucial aspect of the development process. For Animania, we employed a variety of tests to ensure the game's reliability and efficiency.
@@ -115,19 +120,19 @@ Testing is a crucial aspect of the development process. For Animania, we employe
 
 The HTML code was verified using the W3C Markup Validator. The test confirmed that all pages are compliant with current HTML5 standards. This helps in ensuring that the website functions consistently across different web browsers.
 
-![HTML Validation](assets\images\ReadmeDocs\HTMLvalidate.png)
+![HTML Validation](assets/images/ReadmeDocs/HTMLvalidate.png)
 
 #### CSS Validation
 
 The CSS code was validated through the W3C CSS Validator. The code passed the test, which means it is well-structured and free of any syntax errors.
 
-![CSS Validation](assets\images\ReadmeDocs\CSSvalidate.png)
+![CSS Validation](assets/images/ReadmeDocs/CSSvalidate.png)
 
 #### JavaScript Validation
 
 For JavaScript, the JSHint tool was used. This tool is excellent for detecting errors and potential problems in JavaScript code. No issues were found during the validation process, ensuring that the game logic is robust and efficient.
 
-![JavaScript Validation](assets\images\ReadmeDocs\JShint.png)
+![JavaScript Validation](assets/images/ReadmeDocs/JShint.png)
 
 ### Performance Testing
 
@@ -135,8 +140,9 @@ For JavaScript, the JSHint tool was used. This tool is excellent for detecting e
 
 Performance testing was done using Google Lighthouse. This tool provides valuable insights into various performance metrics such as load time, accessibility, and SEO. Animania scored high in all these areas, indicating that the website is well-optimized.
 
-![Lighthouse Testing  Mobile](assets\images\ReadmeDocs\lighthouse_mobile_index.png)
-![Lighthouse Testing  Desktop](assets\images\ReadmeDocs\Lighthouse_desktop.png)
+![Lighthouse Testing  Mobile](assets/images/ReadmeDocs/lighthouse_mobile_index.png)
+![Lighthouse Testing  Desktop](assets/images/ReadmeDocs/Lighthouse_desktop.png)
+
 ## Testing
 
 Code validation was performed using various online tools, and the results can be found in the `assets/images/validation-images/` folder. Lighthouse testing was also performed to ensure optimal performance and accessibility.
@@ -146,45 +152,20 @@ Code validation was performed using various online tools, and the results can be
 The code is organized into separate folders for HTML, CSS, and JavaScript files, making it easier to navigate. Each file serves a specific purpose:
 
 - **HTML Files**: Handle the layout and structure.
-    - `index.html`: The main landing page.
-    - `quiz.html`: The quiz interface.
+  - `index.html`: The main landing page.
+  - `quiz.html`: The quiz interface.
 - **CSS Files**: Manage the styling.
-    - `style.css`: General styles that apply to the entire project.
-    - `quiz_style.css`: Styles specific to the quiz.
+  - `style.css`: General styles that apply to the entire project.
+  - `quiz_style.css`: Styles specific to the quiz.
 - **JavaScript Files**: Implement the game logic.
-    - `questions.js`: Stores the quiz questions.
-    - `quiz.js`: Manages the quiz gameplay.
-    - `script.js`: Handles general JavaScript functionalities.
+  - `questions.js`: Stores the quiz questions.
+  - `quiz.js`: Manages the quiz gameplay.
+  - `script.js`: Handles general JavaScript functionalities.
 
 ## Deployment
 
-The project is hosted on GitHub Pages and can be accessed [here](#).
+Animania is currently hosted on GitHub Pages, a static site hosting service. The site is automatically updated with each commit to the GitHub repository. [here](https://makiaveli1.github.io/Animania/).
 
-## Setup Instructions
-
-To get the project up and running locally, follow these steps:
-
-1. Clone the repository to your machine.
-2. Navigate to the project folder.
-3. Open `index.html` in your browser.
-
-## Contributing
-
-Contributions are welcome! If you wish to contribute, please follow these steps:
-
-1. Fork the repository on GitHub.
-2. Clone your fork to your local machine.
-3. Create a new branch (`git checkout -b feature-branch`).
-4. Make your changes.
-5. Commit and push your changes to your fork.
-6. Open a pull request to the original repository.
-
-Detailed guidelines can be found in the `CONTRIBUTING.md` file.
-
-## Future Plans
-
-- **More Categories**: There are plans to expand the quiz topics to include more anime series and genres.
-- **Sound Effects**: Future updates will incorporate sound effects and background music to enhance the gameplay experience.
 
 ## Credits
 
@@ -193,10 +174,6 @@ Special thanks to various anime series and online communities for inspiring the 
 ### Code Modularity
 
 The code follows the principle of modularity, making it easier to debug, update, and understand. Each function is designed to perform a specific task and is documented for clarity.
-
-### Hosting
-
-Animania is currently hosted on GitHub Pages, a static site hosting service. The site is automatically updated with each commit to the GitHub repository.
 
 ### Domain Setup
 
@@ -207,6 +184,7 @@ Though the project currently uses the default domain provided by GitHub Pages, t
 #### Prerequisites
 
 To run Animania locally, you'll need the following:
+
 - A web browser (e.g., Google Chrome, Firefox, Safari)
 - An IDE (e.g., Visual Studio Code, Sublime Text, Atom)
 - Git installed on your computer
@@ -256,7 +234,6 @@ The quiz questions were carefully curated to cover a wide range of topics in ani
 
 A special thanks to Leonardo.ai for generating images used in the project and Vectorizer.io for converting the images to SVG format. These tools have significantly contributed to the visual appeal of Animania.
 
-
 ### Accessibility
 
 In line with best practices, efforts have been made to make Animania accessible to all users, including those with disabilities. Semantic HTML5 elements have been used to improve screen reader compatibility.
@@ -277,12 +254,8 @@ To keep players engaged, the future roadmap includes the introduction of badges 
 
 Animania aims to build a community around itself. Plans are underway to integrate a forum where players can discuss anime series, share tips on the game, and even suggest new features.
 
-
 ### Conclusion
 
 Animania is more than just a quiz; it's a celebration of anime culture. It aims to bring together anime enthusiasts from around the world and provide them with an engaging, educational, and entertaining platform.
 
 Thank you for your interest in Animania! We hope you enjoy the quiz as much as we enjoyed creating it.
-
-
-
